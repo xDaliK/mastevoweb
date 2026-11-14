@@ -63,24 +63,24 @@
   h1 .l2 { display: block; margin-top: 0.14em; font-size: max(0.46em, 16px); font-weight: 700; letter-spacing: -0.025em; }
   h1 .l2 i { display: inline-block; width: 0.2em; height: 0.2em; margin-left: 0.06em; border-radius: 50%; background: var(--record); }
   .sub { margin: clamp(12px, 2.2vh, 24px) 0 0; font-size: clamp(16px, 1.45vw, 22px); line-height: 1.35; font-weight: 500; text-wrap: balance; }
-  .sub span { color: var(--suave); font-weight: 400; }
+  .sub span { display: block; margin-top: 0.15em; color: rgba(245, 243, 239, 0.5); font-weight: 400; }
   .list { display: none; }
 
   /* Las piezas de la app: los dos máximos, el descanso, cuándo subir y el aviso de estancamiento.
      Solo en pantallas anchas y con altura (en las demás, las funciones van en la gráfica o la lista). */
   .deck { display: none; position: absolute; right: 0; top: 0; width: clamp(340px, 31vw, 450px); grid-template-columns: repeat(3, 1fr); gap: 8px; font-size: clamp(12px, 0.92vw, 14px); }
   .tile { padding: 0.85em 0.9em; border: 1px solid rgba(245, 243, 239, 0.13); border-radius: 14px; background: rgba(245, 243, 239, 0.035); opacity: 0; transform: translateY(10px); animation: rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
-  .tile:nth-child(1) { animation-delay: 0.8s; } .tile:nth-child(2) { animation-delay: 1s; } .tile:nth-child(3) { animation-delay: 1.2s; } .tile:nth-child(4) { animation-delay: 1.4s; }
+  .tile { animation-delay: 0.8s; }
   .tile small { display: block; font-size: 0.74em; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--suave); }
   .maxes { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-  .m small { color: var(--record); } .m.opt small { color: var(--optimo); }
-  .m strong { display: block; margin-top: 0.3em; font-size: 1.3em; font-weight: 700; letter-spacing: -0.015em; white-space: nowrap; }
+  .m small { color: var(--record); display: flex; align-items: center; height: 1.5em; } .m.opt small { color: var(--optimo); }
+  .m strong { display: block; width: fit-content; margin-top: 0.3em; font-size: 1.3em; font-weight: 700; letter-spacing: -0.015em; white-space: nowrap; }
   .m em { display: block; margin-top: 0.35em; font-style: normal; font-size: 0.8em; color: var(--suave); }
   .band { display: block; position: relative; height: 4px; margin-top: 0.7em; border-radius: 2px; background: rgba(245, 243, 239, 0.12); }
   .band i { position: absolute; left: 25%; width: 50%; top: 0; bottom: 0; border-radius: 2px; background: rgba(53, 214, 190, 0.35); }
   .band.nt b { transition: none !important; }
   .band b { position: absolute; top: -3px; width: 10px; height: 10px; margin-left: -5px; border-radius: 50%; background: var(--optimo); left: 75%; transition: left 1.3s cubic-bezier(0.16, 1, 0.3, 1); }
-  .m em.lb { margin-top: 0.15em; font-size: 0.78em; color: var(--tenue); }
+  .m strong em.lb { display: block; margin: 0.05em 0 0; font-size: 1em; font-weight: inherit; letter-spacing: inherit; color: inherit; text-align: right; }
   .rng { display: flex; justify-content: space-between; margin-top: 0.4em; font-size: 0.7em; color: var(--tenue); }
   @keyframes slide { to { left: 55%; } }
   .rest { display: flex; align-items: center; gap: 0.7em; }
@@ -101,7 +101,7 @@
   /* El ciclo: guardar la serie, descansar, subir de peso y romper el máximo óptimo. */
   .tile.hot { border-color: rgba(53, 214, 190, 0.7); background: rgba(53, 214, 190, 0.09); box-shadow: 0 0 0 1px rgba(53, 214, 190, 0.25), 0 0 26px rgba(53, 214, 190, 0.18); }
   .tile { transition: border-color 0.35s, background 0.35s, box-shadow 0.35s; }
-  .m small .nw { display: inline-block; margin-left: 0.5em; padding: 0.05em 0.5em; border-radius: 999px; background: var(--record); color: var(--grafito); font-style: normal; font-size: 0.95em; opacity: 0; transform: scale(0.6); transition: opacity 0.3s, transform 0.3s; }
+  .m small .nw { display: inline-block; margin-left: 0.5em; padding: 0.05em 0.5em; border-radius: 999px; background: var(--record); color: var(--grafito); font-style: normal; font-size: 0.6em; opacity: 0; transform: scale(0.6); transition: opacity 0.3s, transform 0.3s; }
   .m.opt small .nw { background: var(--optimo); }
   .m.up small .nw { opacity: 1; transform: none; }
   .m.opt.up strong, .m.opt.up em { color: var(--optimo); }
@@ -110,7 +110,7 @@
 
   /* El mapa muscular, igual que en la app (frente, corazón del cardio y espalda), a la izquierda de las
      tarjetas y a su misma altura. Solo en pantallas anchas, como el resto de piezas. */
-  .bodies { display: none; grid-column: 1; grid-row: 1 / 3; align-items: center; justify-content: flex-end; gap: 0.35em; opacity: 0; animation: rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) 1.5s forwards; }
+  .bodies { display: none; grid-column: 1; grid-row: 1 / 3; align-items: center; justify-content: flex-end; gap: 0.35em; opacity: 0; animation: rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.8s forwards; }
   .bodies svg.body { display: block; height: var(--bh); width: auto; overflow: visible; }
   .body .bp, .body .mz { fill: #2a2b32; transition: fill 0.7s ease, filter 0.7s ease; }
   .body .bd { fill: none; stroke: rgba(245, 243, 239, 0.3); stroke-width: 2; vector-effect: non-scaling-stroke; }
@@ -186,6 +186,7 @@
   .foot .social { display: none; }
   .switch { font-size: clamp(12px, 0.95vw, 14px); color: var(--tenue); }
 
+
   /* Pantallas anchas pero bajas (portátil con la ventana a media altura, una
      vista previa): las funciones siguen en la gráfica, más compactas. */
   @media (min-aspect-ratio: 1/1) and (max-height: 640px) {
@@ -246,7 +247,6 @@
   }
   @media (max-aspect-ratio: 1/1) and (max-height: 700px) {
     .list { gap: 0.3em 0.8em; margin-top: 12px; font-size: 12.5px; }
-    .sub span { display: none; }
     .plot { top: 60%; bottom: 17%; }
   }
   /* Móviles muy estrechos: un nombre largo pasa a dos líneas en su columna. */
@@ -270,30 +270,37 @@
     .foot .social { font-size: clamp(12.5px, 3.4vw, 14px); }
     .head { top: calc(var(--top) + 80px); }
     h1 { font-size: min(13.5vw, 8.4vh); }
-    .sub { font-size: clamp(14px, 3.8vw, 19px); margin-top: 8px; }
+    .sub { font-size: 3.3vw; margin-top: 8px; white-space: nowrap; }
+    html[lang="es"] .sub { font-size: 3vw; }
     .list { margin-top: 10px; font-size: clamp(11.5px, 3.1vw, 14px); gap: 0.35em 0.8em; }
-    .deck { display: grid; position: static; width: 100%; margin-top: 12px; gap: 6px; grid-template-columns: auto 1fr; font-size: clamp(11px, 3.1vw, 13px); }
-    .deck .maxes { grid-column: 1 / -1; grid-row: 1; }
-    .deck .rest { grid-column: 2; grid-row: 2; display: flex; }
-    .deck .tip { grid-column: 2; grid-row: 3; }
-    .deck .plat { grid-column: 2; grid-row: 4; }
+    .deck { display: grid; position: static; width: 100%; margin-top: 12px; gap: 6px; grid-template-columns: repeat(3, minmax(0, 1fr)); font-size: clamp(10.5px, 3vw, 13px); }
+    .bodies { display: flex; grid-column: 1; grid-row: 1; --bh: 7.4em; gap: 0.15em; justify-content: center; align-items: center; }
+    .deck .maxes { grid-column: 2 / 4; grid-row: 1; gap: 6px; }
+    .deck .m strong { font-size: 1.12em; }
+    .deck .rest { grid-column: 1; grid-row: 2; display: flex; }
+    .deck .tip { grid-column: 2; grid-row: 2; }
+    .deck .plat { grid-column: 3; grid-row: 2; }
     .deck .note { display: none; }
     .deck .m em:not(.lb) { display: none; }
-    .deck .tile { padding: 0.55em 0.75em; }
-    .deck .rest svg { width: 2.3em; height: 2.3em; }
+    .deck .tile { padding: 0.5em 0.6em; }
+    .deck .rest svg { width: 2em; height: 2em; }
+    .deck .tile strong { font-size: 1.05em; }
+    .deck .tile small { font-size: 0.66em; }
+    .deck .m small { font-size: 0.7em; }
     .deck .tip strong, .deck .plat strong { margin-top: 0.15em; }
-    .bodies { display: flex; grid-column: 1; grid-row: 2 / 5; --bh: 11.6em; }
     .plot { top: 69%; bottom: 3%; }
   }
   @media (max-aspect-ratio: 1/1) and (max-height: 760px) {
     .list { display: none; }
-    .sub span { display: none; }
     .plot { top: 69%; }
   }
   @media (max-aspect-ratio: 1/1) and (max-height: 640px) {
-    .bodies { display: none; }
-    .deck { grid-template-columns: repeat(3, 1fr); }
-    .deck .rest, .deck .tip, .deck .plat { grid-column: auto; grid-row: 2; }
+    .deck .rest svg { display: none; }
+    .deck .tile { padding: 0.45em 0.5em; }
+  }
+  @media (max-aspect-ratio: 1/1) and (max-height: 640px) and (max-width: 345px) {
+    .bodies { --bh: 5.2em; }
+    .deck { font-size: 10px; }
     .plot { top: 66%; }
     .switch { display: block; }
   }
@@ -309,7 +316,7 @@
     .list li:nth-child(odd) { border-color: rgba(53, 214, 190, 0.55); }
     .list li:nth-child(even) { border-color: rgba(255, 68, 51, 0.55); }
     .pt, .tag, .more { display: none; }
-    .plot { right: 5%; top: 72%; bottom: 3%; }
+    .plot { right: 5%; top: 73%; bottom: 3%; }
     .peak { font-size: 0.74em; letter-spacing: 0.03em; white-space: normal; width: 4.4em; line-height: 1.15; }
     .peak.real, .peak.opt { transform: translate(0, -50%); margin: 0 0 0 1.1em; }
     .foot .lm { order: 3; flex-basis: 100%; display: flex; flex-direction: column; align-items: flex-start; gap: 4px; }
@@ -320,7 +327,9 @@
     .head { top: calc(var(--top) + 80px); }
     .list { justify-content: center; }
   }
-  @media (max-aspect-ratio: 1/1) and (max-height: 660px) { .plot { top: 66%; } }
+  @media (max-aspect-ratio: 1/1) and (max-height: 660px) { .plot { top: 72%; } }
+  @media (max-aspect-ratio: 1/1) and (min-height: 780px) { .plot { top: 61%; } }
+  @media (max-aspect-ratio: 1/1) and (max-height: 600px) { .plot { top: 82%; } }
   @media (max-aspect-ratio: 1/1) and (max-height: 760px) { .list { font-size: 10.5px; gap: 4px; } }
   .lm { display: contents; }
   .bar .social { position: relative; }
@@ -381,7 +390,7 @@
 
   <div class="head">
     <h1><span class="l1">Muy pronto</span><span class="l2">en Google Play<i aria-hidden="true"></i></span></h1>
-    <p class="sub">Domina tu evolución. <span>No solo lo que levantas. Lo que haces tuyo.</span></p>
+    <p class="sub">Domina tu evolución con tu compañero de entrenamiento. <span>No solo lo que levantas. Lo que consigues.</span></p>
     <ul class="list" aria-hidden="true">
       <li class="opt" data-k="" style="--d:0.70s">Dos máximos</li>
       <li class="opt" data-k="1" style="--d:2.00s">Importa tu historial</li>
@@ -398,8 +407,8 @@
 
     <div class="deck" aria-hidden="true">
       <div class="tile maxes">
-        <div class="m real" id="realm"><small>Máx. real<i class="nw">NUEVO</i></small><strong><span id="realr">5</span> reps &times; <span id="realw">90</span> kg</strong><em class="lb" id="reallb">198,4 lb</em><em id="realem">Lo máximo que has levantado</em></div>
-        <div class="m opt" id="optm"><small>Máx. óptimo<i class="nw">NUEVO</i></small><strong><span id="optr">12</span> reps &times; <span id="optw">80</span> kg</strong><em class="lb" id="optlb">176,4 lb</em><em id="optem">Lo más pesado en tus 8&ndash;12 reps</em><span class="band"><i></i><b></b></span></div>
+        <div class="m real" id="realm"><small>Máx. real<i class="nw">NUEVO</i></small><strong><span id="realr">5</span> reps &times; <span id="realw">90</span> <span id="realu">kg</span><em class="lb" id="reallb">198,4 lb</em></strong><em id="realem">Lo máximo que has levantado</em></div>
+        <div class="m opt" id="optm"><small>Máx. óptimo<i class="nw">NUEVO</i></small><strong><span id="optr">12</span> reps &times; <span id="optw">80</span> <span id="optu">kg</span><em class="lb" id="optlb">176,4 lb</em></strong><em id="optem">Lo más pesado en tus 8&ndash;12 reps</em><span class="band"><i></i><b></b></span></div>
       </div>
       <div class="tile rest" id="rest">
         <svg viewBox="0 0 44 44"><circle class="trk" cx="22" cy="22" r="18"/><circle class="prg" id="ring" cx="22" cy="22" r="18"/></svg>
@@ -453,7 +462,7 @@
     <span class="end real" style="left:88.6%; top:18.67%"></span>
     <span class="end opt" style="left:88.6%; top:53.33%"></span>
     <span class="peak real" style="left:88.6%; top:18.67%">Máx. real</span>
-    <span class="peak opt" style="left:88.6%; top:53.33%">Máx. óptimo</span>
+    <span class="peak opt" style="left:84.6%; top:53.33%">Máx. óptimo</span>
     <span class="more" style="left:88.6%; top:60.33%">&hellip; y mucho más</span>
   </div>
 
@@ -534,8 +543,12 @@
   }
   function fmt(v) { return (Math.round(v * 10) / 10).toString().replace('.', ','); }
   function lbs(kg) { return (kg * 2.20462).toFixed(1).replace('.', ',') + ' lb'; }
-  function showOpt(kg, reps) { optw.textContent = fmt(kg); optr.textContent = reps; optlb.textContent = lbs(kg); }
-  function showReal(kg, reps) { realw.textContent = fmt(kg); realr.textContent = reps; reallb.textContent = lbs(kg); }
+  // En inglés, arriba las lb y debajo los kg; en español, al revés.
+  var LBF = document.documentElement.lang === 'en';
+  function mainTxt(kg) { return LBF ? fmt(kg * 2.20462) : fmt(kg); }
+  function subTxt(kg) { return LBF ? fmt(kg) + ' kg' : lbs(kg); }
+  function showOpt(kg, reps) { optw.textContent = mainTxt(kg); optr.textContent = reps; optlb.textContent = subTxt(kg); }
+  function showReal(kg, reps) { realw.textContent = mainTxt(kg); realr.textContent = reps; reallb.textContent = subTxt(kg); }
   function moveBand(to) {
     band.style.left = to + '%';
     bandPos = to;
@@ -581,7 +594,7 @@
       at(1300, function () {
         optm.classList.add('up'); optem.textContent = '¡Nuevo máximo óptimo!';
         var to = ow + 2.5; oreps = level === 0 ? 10 : 9; optr.textContent = oreps;
-        tween(ow, to, 1300, function (v) { optw.textContent = fmt(v); optlb.textContent = lbs(v); });
+        tween(ow, to, 1300, function (v) { optw.textContent = mainTxt(v); optlb.textContent = subTxt(v); });
         moveBand(repsPos(oreps));
         setZones(); platn.textContent = '0 semanas';
         ow = to; level++;
@@ -596,7 +609,7 @@
       at(2200, function () {
         setZones(); realm.classList.add('up'); realem.textContent = '¡Nuevo máximo real!';
         var to = rw + 2.5; rreps = 3; realr.textContent = rreps;
-        tween(rw, to, 1300, function (v) { realw.textContent = fmt(v); reallb.textContent = lbs(v); });
+        tween(rw, to, 1300, function (v) { realw.textContent = mainTxt(v); reallb.textContent = subTxt(v); });
         rw = to;
       });
       at(5200, function () { realm.classList.remove('up'); realem.textContent = 'Lo máximo que has levantado'; });
