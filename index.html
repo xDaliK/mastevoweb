@@ -170,6 +170,7 @@
   .tag.tall { padding-top: 2.7em; }
   .tag.real.tall { padding-top: 0; padding-bottom: 3.4em; }
   .peak { position: absolute; transform: translate(0, -50%); margin: 0 0 0 1.5em; font-size: 0.95em; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap; opacity: 0; animation: show 0.5s ease-out 6.55s forwards; }
+  .more { position: absolute; margin: 0 0 0 1.5em; font-size: 0.9em; font-style: italic; color: var(--suave); white-space: nowrap; opacity: 0; animation: show 0.6s ease-out 7.10s forwards; }
   .peak.real { color: var(--record); }
   .peak.opt { color: var(--optimo); }
 
@@ -300,9 +301,10 @@
     .list { order: 3; display: flex !important; flex-wrap: wrap; gap: 5px; margin: 10px 0 0; font-size: clamp(10.5px, 2.9vw, 12.5px); }
     .list li { display: block; white-space: nowrap; padding: 0.3em 0.7em; border: 1px solid rgba(245, 243, 239, 0.18); border-radius: 999px; background: rgba(245, 243, 239, 0.04); line-height: 1.2; }
     .list li::before { display: none; }
+    .list li { opacity: 0; transform: translateY(6px); animation: rise 0.5s cubic-bezier(0.16, 1, 0.3, 1) var(--d) forwards; }
     .list li:nth-child(odd) { border-color: rgba(53, 214, 190, 0.55); }
     .list li:nth-child(even) { border-color: rgba(255, 68, 51, 0.55); }
-    .pt, .tag { display: none; }
+    .pt, .tag, .more { display: none; }
     .plot { right: 5%; top: 72%; bottom: 3%; }
     .peak { font-size: 0.74em; letter-spacing: 0.03em; white-space: normal; width: 4.4em; line-height: 1.15; }
     .peak.real, .peak.opt { transform: translate(0, -50%); margin: 0 0 0 1.1em; }
@@ -320,7 +322,8 @@
 
   @media (prefers-reduced-motion: reduce) {
     .plot svg { animation: none; clip-path: none; }
-    .pt, .tag, .end, .tile { animation: none; opacity: 1; transform: none; }
+    .pt, .tag, .end, .tile, .list li { animation: none; opacity: 1; transform: none; }
+    .more { animation: none; opacity: 1; }
     .tag.real { transform: translate(-100%, -100%); }
     .peak { animation: none; opacity: 1; }
     .end::after { animation: none; }
@@ -357,14 +360,15 @@
     <h1><span class="l1">Coming soon</span><span class="l2">to Google Play<i aria-hidden="true"></i></span></h1>
     <p class="sub">Master your evolution. <span>Not just what you lift. What you own.</span></p>
     <ul class="list" aria-hidden="true">
-      <li class="opt" data-k="">Two maxes</li>
-      <li class="opt" data-k="1">Import your history</li>
-      <li class="real" data-k="2">Plate calculator</li>
-      <li class="opt" data-k="3">No ads</li>
-      <li class="real" data-k="4">Rest timer</li>
-      <li class="opt" data-k="5">No account</li>
-      <li class="real" data-k="6">Progress</li>
-      <li class="opt" data-k="7">Offline</li>
+      <li class="opt" data-k="" style="--d:0.70s">Two maxes</li>
+      <li class="opt" data-k="1" style="--d:2.04s">Import your history</li>
+      <li class="real" data-k="2" style="--d:2.57s">Plate calculator</li>
+      <li class="opt" data-k="3" style="--d:3.15s">No ads</li>
+      <li class="real" data-k="4" style="--d:3.72s">Rest timer</li>
+      <li class="opt" data-k="5" style="--d:4.27s">No account</li>
+      <li class="real" data-k="6" style="--d:4.90s">Progress</li>
+      <li class="opt" data-k="7" style="--d:5.37s">Offline</li>
+      <li class="opt" data-k="" style="--d:6.70s">And much more…</li>
     </ul>
 
     <div class="deck" aria-hidden="true">
@@ -419,6 +423,7 @@
     <span class="end opt" style="left:88.6%; top:53.33%"></span>
     <span class="peak real" style="left:88.6%; top:18.67%">Real max</span>
     <span class="peak opt" style="left:88.6%; top:53.33%">Optimal max</span>
+    <span class="more" style="left:88.6%; top:60.33%">&hellip; and much more</span>
   </div>
 
   <div class="foot">
@@ -567,7 +572,7 @@
     if (step % 2 === 0 && level >= 2) { at(5600 + 7400, softReset); at(5600 + 7400 + 2600, loop); } else { at(5600 + 7600, loop); }
   }
   // Empieza cuando termina la presentación de las curvas.
-  setTimeout(loop, 6700);
+  setTimeout(loop, 7700);
 })();
 </script>
 </body>
