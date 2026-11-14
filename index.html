@@ -12,6 +12,10 @@
 <meta property="og:description" content="Two maxes per exercise, real and optimal. No ads, no account. Master your evolution.">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@mastevoapp">
+<link rel="canonical" href="https://mastevo.app/">
+<link rel="alternate" hreflang="en" href="https://mastevo.app/">
+<link rel="alternate" hreflang="es" href="https://mastevo.app/es/">
+<link rel="alternate" hreflang="x-default" href="https://mastevo.app/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230A0A0C'/%3E%3Cpath d='M14 50V24L32 42L50 14V50' fill='none' stroke='%23F5F3EF' stroke-width='7' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M32 42L50 14V50' fill='none' stroke='%23FF4433' stroke-width='7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -137,7 +141,7 @@
   .plot svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
   /* Se revelan las dos a la vez, de izquierda a derecha, con un recorte de
      todo el dibujo (lineal: cada función sale cuando la línea llega a ella). */
-  .plot svg { clip-path: inset(-30% 100% -30% 0); animation: reveal 6.0s linear 0.5s forwards; }
+  .plot svg { clip-path: inset(-30% 100% -30% 0); animation: reveal 12.0s linear 0.5s forwards; }
   @keyframes reveal { to { clip-path: inset(-30% -2% -30% 0); } }
   .line { fill: none; stroke-width: var(--trazo); stroke-linejoin: round; stroke-linecap: round; vector-effect: non-scaling-stroke; }
   .line.real { stroke: var(--record); }
@@ -150,10 +154,10 @@
 
   .pt { position: absolute; width: 0.72em; height: 0.72em; margin: -0.36em 0 0 -0.36em; border-radius: 50%; background: var(--grafito); border: 2px solid var(--optimo); opacity: 0; transform: scale(0.3); animation: rise 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
   .pt.real { border-color: var(--record); }
-  .end { position: absolute; width: 1.25em; height: 1.25em; margin: -0.625em 0 0 -0.625em; border-radius: 50%; opacity: 0; transform: scale(0.4); animation: rise 0.45s cubic-bezier(0.16, 1, 0.3, 1) 6.45s forwards; }
+  .end { position: absolute; width: 1.25em; height: 1.25em; margin: -0.625em 0 0 -0.625em; border-radius: 50%; opacity: 0; transform: scale(0.4); animation: rise 0.45s cubic-bezier(0.16, 1, 0.3, 1) 12.45s forwards; }
   .end.real { background: var(--record); }
   .end.opt { background: var(--optimo); }
-  .end::after { content: ""; position: absolute; inset: 0; border-radius: 50%; border: 2px solid currentColor; opacity: 0; }
+  .end::after { content: ""; position: absolute; inset: 0; border-radius: 50%; border: 2px solid currentColor; opacity: 0; animation: ping 0.9s ease-out 12.60s 1; }
   .end.real::after { color: var(--record); }
   .end.opt::after { color: var(--optimo); }
   @keyframes ping { 0% { transform: scale(1); opacity: 0.9; } 100% { transform: scale(3.4); opacity: 0; } }
@@ -169,14 +173,14 @@
   .tag.real { margin: -0.7em -1px 0 0; padding: 0 0.65em 1.7em 0; border-left: 0; border-right: 1px solid rgba(245, 243, 239, 0.26); transform: translate(-100%, -100%); animation-name: show; animation-timing-function: ease-out; color: var(--suave); }
   .tag.tall { padding-top: 2.7em; }
   .tag.real.tall { padding-top: 0; padding-bottom: 3.4em; }
-  .peak { position: absolute; transform: translate(0, -50%); margin: 0 0 0 1.5em; font-size: 0.95em; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap; opacity: 0; animation: show 0.5s ease-out 6.55s forwards; }
-  .more { position: absolute; margin: 0 0 0 1.5em; font-size: 0.9em; font-style: italic; color: var(--suave); white-space: nowrap; opacity: 0; animation: show 0.6s ease-out 7.10s forwards; }
+  .peak { position: absolute; transform: translate(0, -50%); margin: 0 0 0 1.5em; font-size: 0.95em; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap; opacity: 0; animation: show 0.5s ease-out 12.55s forwards; }
+  .more { position: absolute; margin: 0 0 0 1.5em; font-size: 0.9em; font-style: italic; color: var(--suave); white-space: nowrap; opacity: 0; animation: show 0.6s ease-out 13.10s forwards; }
   .peak.real { color: var(--record); }
   .peak.opt { color: var(--optimo); }
 
   /* Abajo: importar de otra app (una mención pequeña) y, en el móvil, las redes */
   .foot {
-    position: absolute; z-index: 3; left: clamp(14px, 1.4vw, 24px); right: var(--pad); bottom: max(calc(var(--pad) * 0.6), env(safe-area-inset-bottom, 0px));
+    position: absolute; z-index: 3; left: clamp(14px, 1.4vw, 24px); right: var(--pad); bottom: max(calc(var(--pad) * 0.3), env(safe-area-inset-bottom, 0px));
     display: flex; align-items: baseline; gap: 0.4em 1.1em; flex-wrap: wrap; font-size: clamp(13px, 1.05vw, 16px); color: var(--suave);
   }
   .foot .social { display: none; }
@@ -264,7 +268,7 @@
     .foot .social { order: 2; }
     .switch { order: 1; font-size: clamp(11.5px, 3.2vw, 13.5px); }
     .foot .social { font-size: clamp(12.5px, 3.4vw, 14px); }
-    .head { top: calc(var(--top) + 100px); }
+    .head { top: calc(var(--top) + 80px); }
     h1 { font-size: min(13.5vw, 8.4vh); }
     .sub { font-size: clamp(14px, 3.8vw, 19px); margin-top: 8px; }
     .list { margin-top: 10px; font-size: clamp(11.5px, 3.1vw, 14px); gap: 0.35em 0.8em; }
@@ -308,17 +312,33 @@
     .plot { right: 5%; top: 72%; bottom: 3%; }
     .peak { font-size: 0.74em; letter-spacing: 0.03em; white-space: normal; width: 4.4em; line-height: 1.15; }
     .peak.real, .peak.opt { transform: translate(0, -50%); margin: 0 0 0 1.1em; }
-    .mail { flex-basis: 100%; order: 3; }
+    .foot .lm { order: 3; flex-basis: 100%; display: flex; flex-direction: column; align-items: flex-start; gap: 4px; }
+    .foot .lang { position: fixed; top: var(--top); right: var(--pad); }
     .switch { display: none; }
     .foot .social { gap: 0.2em 1.1em; font-size: clamp(12px, 3.3vw, 14px); }
     .foot .mail { margin-top: 2px; font-size: clamp(11.5px, 3.1vw, 13px); }
-    .head { top: calc(var(--top) + 78px); }
+    .head { top: calc(var(--top) + 80px); }
     .list { justify-content: center; }
   }
   @media (max-aspect-ratio: 1/1) and (max-height: 660px) { .plot { top: 66%; } }
   @media (max-aspect-ratio: 1/1) and (max-height: 760px) { .list { font-size: 10.5px; gap: 4px; } }
+  .lm { display: contents; }
+  .bar .social { position: relative; }
+  .bar .lang { position: absolute; right: 0; bottom: calc(100% + 6px); }
+  .lang { color: var(--hueso); font-weight: 600; text-decoration: none; padding: 0.1em 0.55em; border: 1px solid rgba(245, 243, 239, 0.28); border-radius: 999px; font-size: 0.85em; }
+  .lang:hover { border-color: var(--record); }
+  .list li.extra { border: 0; background: none; color: var(--suave); font-style: italic; flex-basis: 100%; text-align: center; padding-top: 0; }
   .mail { color: var(--suave); font-weight: 500; display: inline-flex; align-items: center; gap: 0.4em; }
   .mail svg { width: 1.1em; height: 1.1em; flex: none; }
+
+  /* Móvil: el dibujo va un pelín más rápido y todo lo que depende de él, con él. */
+  @media (max-aspect-ratio: 1/1) {
+    .plot svg { animation-duration: 9.36s; }
+    .end { animation-delay: 9.81s; }
+    .end::after { animation-delay: 9.96s; }
+    .peak { animation-delay: 9.91s; }
+    .list li { animation-delay: calc(0.5s + (var(--d) - 0.5s) * 0.78); }
+  }
 
   @media (prefers-reduced-motion: reduce) {
     .plot svg { animation: none; clip-path: none; }
@@ -352,7 +372,10 @@
       <a href="https://www.tiktok.com/@mastevoapp" target="_blank" rel="noopener">TikTok</a>
       <a href="https://x.com/mastevoapp" target="_blank" rel="noopener">X</a>
       <a href="https://www.youtube.com/@mastevoapp" target="_blank" rel="noopener">YouTube</a>
-      <a class="mail" href="mailto:info@mastevo.app"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 7l8.5 6 8.5-6"/></svg>info@mastevo.app</a>
+      <span class="lm">
+        <a class="lang" href="/es/" hreflang="es" lang="es">Español</a>
+        <a class="mail" href="mailto:info@mastevo.app"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 7l8.5 6 8.5-6"/></svg>info@mastevo.app</a>
+      </span>
     </nav>
   </div>
 
@@ -361,14 +384,16 @@
     <p class="sub">Master your evolution. <span>Not just what you lift. What you own.</span></p>
     <ul class="list" aria-hidden="true">
       <li class="opt" data-k="" style="--d:0.70s">Two maxes</li>
-      <li class="opt" data-k="1" style="--d:2.04s">Import your history</li>
-      <li class="real" data-k="2" style="--d:2.57s">Plate calculator</li>
-      <li class="opt" data-k="3" style="--d:3.15s">No ads</li>
-      <li class="real" data-k="4" style="--d:3.72s">Rest timer</li>
-      <li class="opt" data-k="5" style="--d:4.27s">No account</li>
-      <li class="real" data-k="6" style="--d:4.90s">Progress</li>
-      <li class="opt" data-k="7" style="--d:5.37s">Offline</li>
-      <li class="opt" data-k="" style="--d:6.70s">And much more…</li>
+      <li class="opt" data-k="1" style="--d:2.11s">Import your history</li>
+      <li class="real" data-k="2" style="--d:3.16s">Log in 2 taps</li>
+      <li class="opt" data-k="3" style="--d:4.21s">70 exercises + your own</li>
+      <li class="real" data-k="4" style="--d:5.25s">Plate calculator</li>
+      <li class="opt" data-k="5" style="--d:6.29s">No ads</li>
+      <li class="real" data-k="6" style="--d:7.34s">Rest timer</li>
+      <li class="opt" data-k="7" style="--d:8.37s">No account</li>
+      <li class="real" data-k="8" style="--d:9.43s">Progress</li>
+      <li class="opt" data-k="9" style="--d:10.47s">Offline</li>
+      <li class="extra" data-k="" style="--d:12.70s">And much more…</li>
     </ul>
 
     <div class="deck" aria-hidden="true">
@@ -388,6 +413,8 @@
 
   <!-- Para el lector de pantalla, las funciones en una lista; el dibujo es solo decoración. -->
   <ul class="sr" aria-label="What MASTEVO brings" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);margin:0;padding:0">
+    <li>Log a set in two taps</li>
+    <li>70 exercises, plus unlimited exercises of your own</li>
     <li>Real &amp; optimal max</li>
     <li>Import your history</li>
     <li>No ads</li>
@@ -400,25 +427,29 @@
 
   <div class="plot" aria-hidden="true">
     <svg viewBox="0 0 1000 600" preserveAspectRatio="none">
-      <path class="line real" d="M-10 520 L59.3 499.9 Q66 498 71.3 502.6 L108.7 535.4 Q114 540 119.5 535.7 L184.5 484.3 Q190 480 195.9 483.7 L241.1 512.3 Q247 516 251.1 510.3 L328.9 401.7 Q333 396 336.8 401.9 L377.2 464.1 Q381 470 387.2 466.8 L441.8 439.2 Q448 436 453.8 440.0 L480.2 458.0 Q486 462 488.1 455.3 L526.9 328.7 Q529 322 532.3 328.2 L567.7 393.8 Q571 400 577.1 396.6 L636.9 363.4 Q643 360 647.0 365.7 L674.0 404.3 Q678 410 680.3 403.4 L726.7 268.6 Q729 262 731.8 268.4 L764.2 343.6 Q767 350 771.4 344.5 L805.6 301.5 Q810 296 812.1 289.3 L840.9 198.7 Q843 192 847.5 197.4 L858.5 210.6 Q863 216 864.5 209.2"/>
-      <path class="line real surge" d="M864.5 209.2 L886 112"/>
-      <path class="line opt" d="M-10 596 L69.1 581.3 Q76 580 81.7 584.1 L117.3 609.9 Q123 614 128.1 609.2 L175.9 564.8 Q181 560 186.7 564.1 L237.3 599.9 Q243 604 247.4 598.6 L290.6 545.4 Q295 540 301.2 543.3 L336.8 562.7 Q343 566 349.9 566.9 L426.1 577.1 Q433 578 436.7 572.0 L477.3 506.0 Q481 500 486.5 504.3 L513.5 525.7 Q519 530 526.0 530.7 L617.0 539.3 Q624 540 628.0 534.2 L668.0 475.8 Q672 470 677.9 473.7 L704.1 490.3 Q710 494 717.0 494.4 L803.0 499.6 Q810 500 812.9 493.6 L835.1 444.4 Q838 438 842.6 443.3 L854.4 456.7 Q859 462 860.3 455.1"/>
-      <path class="line opt surge" d="M860.3 455.1 L886 320"/>
+      <path class="line real" d="M-10 545 L50.3 527.0 Q57 525 63.8 523.2 L88.2 516.8 Q95 515 102.0 515.6 L145.0 519.4 Q152 520 157.7 516.0 L206.3 482.0 Q212 478 217.8 481.9 L251.2 504.1 Q257 508 263.8 506.2 L298.2 496.8 Q305 495 311.4 492.1 L336.6 480.9 Q343 478 346.6 472.0 L385.4 406.0 Q389 400 393.4 405.5 L428.6 449.5 Q433 455 439.3 452.0 L469.7 438.0 Q476 435 480.8 440.1 L514.2 474.9 Q519 480 521.3 473.4 L564.7 346.6 Q567 340 570.3 346.2 L606.7 413.8 Q610 420 616.2 416.7 L650.8 398.3 Q657 395 661.5 400.3 L690.5 434.7 Q695 440 696.9 433.3 L742.1 271.7 Q744 265 748.1 270.7 L786.9 324.3 Q791 330 796.2 325.3 L818.8 304.7 Q824 300 826.3 293.4 L850.7 221.6 Q853 215 855.1 208.3"/>
+      <path class="line real surge" d="M855.1 208.3 L886 112"/>
+      <path class="line opt" d="M-10 615 L50.4 594.3 Q57 592 63.6 589.6 L83.4 582.4 Q90 580 96.9 581.3 L116.1 584.7 Q123 586 129.6 583.8 L164.4 572.2 Q171 570 177.2 573.3 L212.8 592.7 Q219 596 223.5 590.6 L257.5 550.4 Q262 545 269.0 545.5 L294.0 547.5 Q301 548 307.8 546.5 L340.2 539.5 Q347 538 351.9 543.0 L385.1 577.0 Q390 582 395.6 577.8 L427.4 554.2 Q433 550 438.6 554.2 L472.4 579.8 Q478 584 482.8 578.9 L519.2 540.1 Q524 535 530.2 538.3 L564.8 556.7 Q571 560 576.4 555.6 L608.6 529.4 Q614 525 619.8 528.8 L649.2 548.2 Q655 552 659.8 546.9 L695.2 510.1 Q700 505 706.3 508.0 L736.7 522.0 Q743 525 748.1 520.2 L780.9 489.8 Q786 485 792.2 488.2 L827.8 506.8 Q834 510 836.8 503.6 L859.2 451.4 Q862 445 863.3 438.1"/>
+      <path class="line opt surge" d="M863.3 438.1 L886 320"/>
     </svg>
-    <span class="pt opt" data-k="1" style="left:24.27%; top:100.27%; animation-delay:1.99s"></span>
-    <span class="tag opt" style="left:24.27%; top:100.27%; animation-delay:2.03s">Import your history</span>
-    <span class="pt opt" data-k="3" style="left:43.22%; top:96.05%; animation-delay:3.10s"></span>
-    <span class="tag opt tall" style="left:43.22%; top:96.05%; animation-delay:3.14s">No ads</span>
-    <span class="pt opt" data-k="5" style="left:62.32000000000001%; top:89.73%; animation-delay:4.22s"></span>
-    <span class="tag opt" style="left:62.32000000000001%; top:89.73%; animation-delay:4.26s">No account needed</span>
-    <span class="pt opt" data-k="7" style="left:80.9%; top:83.05%; animation-delay:5.32s"></span>
-    <span class="tag opt tall" style="left:80.9%; top:83.05%; animation-delay:5.36s">Works offline</span>
-    <span class="pt real" data-k="2" style="left:33.29%; top:66.48%; animation-delay:2.52s"></span>
-    <span class="tag real" style="left:33.29%; top:66.48%; animation-delay:2.56s">Weight &amp; plate calculator</span>
-    <span class="pt real" data-k="4" style="left:52.92999999999999%; top:54.2%; animation-delay:3.67s"></span>
-    <span class="tag real tall" style="left:52.92999999999999%; top:54.2%; animation-delay:3.71s">Auto rest timer</span>
-    <span class="pt real" data-k="6" style="left:72.91%; top:44.22%; animation-delay:4.85s"></span>
-    <span class="tag real" style="left:72.91%; top:44.22%; animation-delay:4.89s">Progress evolution</span>
+    <span class="pt opt" data-k="1" style="left:12.290000000000001%; top:97.52%; animation-delay:2.06s"></span>
+    <span class="tag opt" style="left:12.290000000000001%; top:97.52%; animation-delay:2.10s">Import your history</span>
+    <span class="pt opt" data-k="3" style="left:30.1%; top:91.25%; animation-delay:4.16s"></span>
+    <span class="tag opt tall" style="left:30.1%; top:91.25%; animation-delay:4.20s">70 exercises.<br>Add unlimited of your own.</span>
+    <span class="pt opt" data-k="5" style="left:47.78%; top:96.95%; animation-delay:6.24s"></span>
+    <span class="tag opt" style="left:47.78%; top:96.95%; animation-delay:6.28s">No ads</span>
+    <span class="pt opt" data-k="7" style="left:65.47%; top:91.63%; animation-delay:8.32s"></span>
+    <span class="tag opt tall" style="left:65.47%; top:91.63%; animation-delay:8.36s">No account needed</span>
+    <span class="pt opt" data-k="9" style="left:83.31%; top:84.6%; animation-delay:10.42s"></span>
+    <span class="tag opt" style="left:83.31%; top:84.6%; animation-delay:10.46s">Works offline</span>
+    <span class="pt real" data-k="2" style="left:21.2%; top:80.0%; animation-delay:3.11s"></span>
+    <span class="tag real" style="left:21.2%; top:80.0%; animation-delay:3.15s">Log a set<br>in two taps</span>
+    <span class="pt real" data-k="4" style="left:38.92%; top:67.15%; animation-delay:5.20s"></span>
+    <span class="tag real tall" style="left:38.92%; top:67.15%; animation-delay:5.24s">Weight &amp; plate calculator</span>
+    <span class="pt real" data-k="6" style="left:56.73%; top:57.2%; animation-delay:7.29s"></span>
+    <span class="tag real" style="left:56.73%; top:57.2%; animation-delay:7.33s">Auto rest timer</span>
+    <span class="pt real" data-k="8" style="left:74.46000000000001%; top:44.68%; animation-delay:9.38s"></span>
+    <span class="tag real tall" style="left:74.46000000000001%; top:44.68%; animation-delay:9.42s">Progress evolution</span>
     <span class="end real" style="left:88.6%; top:18.67%"></span>
     <span class="end opt" style="left:88.6%; top:53.33%"></span>
     <span class="peak real" style="left:88.6%; top:18.67%">Real max</span>
@@ -434,7 +465,10 @@
       <a href="https://www.tiktok.com/@mastevoapp" target="_blank" rel="noopener">TikTok</a>
       <a href="https://x.com/mastevoapp" target="_blank" rel="noopener">X</a>
       <a href="https://www.youtube.com/@mastevoapp" target="_blank" rel="noopener">YouTube</a>
-      <a class="mail" href="mailto:info@mastevo.app"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 7l8.5 6 8.5-6"/></svg>info@mastevo.app</a>
+      <span class="lm">
+        <a class="lang" href="/es/" hreflang="es" lang="es">Español</a>
+        <a class="mail" href="mailto:info@mastevo.app"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 7l8.5 6 8.5-6"/></svg>info@mastevo.app</a>
+      </span>
     </nav>
   </div>
 </main>
@@ -572,7 +606,7 @@
     if (step % 2 === 0 && level >= 2) { at(5600 + 7400, softReset); at(5600 + 7400 + 2600, loop); } else { at(5600 + 7600, loop); }
   }
   // Empieza cuando termina la presentación de las curvas.
-  setTimeout(loop, 7700);
+  setTimeout(loop, (window.matchMedia && matchMedia('(max-aspect-ratio: 1/1)').matches ? 11860 : 14500));
 })();
 </script>
 </body>
