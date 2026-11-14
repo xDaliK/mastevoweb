@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>MASTEVO · Coming soon to Google Play</title>
+<title>MASTEVO · Coming soon</title>
 <meta name="description" content="MASTEVO is coming soon to Google Play. Two maxes per exercise, real and optimal. It tells you when to add weight and warns you when you stall. No ads, no account needed. Master your evolution.">
 <meta name="theme-color" content="#1A1B20">
 <meta property="og:type" content="website">
@@ -53,6 +53,8 @@
     display: flex; align-items: center; justify-content: space-between; gap: 20px;
   }
   .wm { display: block; width: clamp(124px, 12vw, 190px); height: auto; overflow: visible; }
+  .wm-link { display: inline-block; cursor: pointer; text-decoration: none; }
+  .wm-link .wm { display: block; }
   .social { display: flex; align-items: baseline; gap: 0.35em 1.2em; flex-wrap: wrap; font-size: clamp(14px, 1.15vw, 17px); font-weight: 600; }
   .social span { color: var(--tenue); font-weight: 400; }
 
@@ -362,7 +364,12 @@
 <body>
 <main class="page">
   <div class="bar">
-    <svg class="wm" viewBox="0 0 411 64" role="img" aria-label="MASTEVO">
+     <a href="https://mastevo.app"
+     class="wm-link"
+     aria-label="Go to Mastevo"
+     title="Mastevo">
+
+      <svg class="wm" viewBox="0 0 411 64" role="img" aria-label="MASTEVO">
       <defs><clipPath id="wmRight" clipPathUnits="userSpaceOnUse"><rect x="30" y="-10" width="40" height="90"/></clipPath></defs>
       <g fill="none" stroke="#F5F3EF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
         <path d="M4 60V22L30 48L56 4V60"/>
@@ -386,6 +393,7 @@
         <a class="mail" href="mailto:info@mastevo.app"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 7l8.5 6 8.5-6"/></svg>info@mastevo.app</a>
       </span>
     </nav>
+    </a>
   </div>
 
   <div class="head">
