@@ -141,8 +141,8 @@
   .plot svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
   /* Se revelan las dos a la vez, de izquierda a derecha, con un recorte de
      todo el dibujo (lineal: cada función sale cuando la línea llega a ella). */
-  .plot svg { clip-path: inset(-30% 100% -30% 0); animation: reveal 12.0s linear 0.5s forwards; }
-  @keyframes reveal { to { clip-path: inset(-30% -2% -30% 0); } }
+  .plot svg { clip-path: inset(-30% 100% -30% 0); animation: reveal 9.8s linear 0.5s forwards; }
+  @keyframes reveal { 0% { clip-path: inset(-30% 100% -30% 0); } 98% { clip-path: inset(-30% 11.5% -30% 0); } 100% { clip-path: inset(-30% -2% -30% 0); } }
   .line { fill: none; stroke-width: var(--trazo); stroke-linejoin: round; stroke-linecap: round; vector-effect: non-scaling-stroke; }
   .line.real { stroke: var(--record); }
   .line.opt { stroke: var(--optimo); }
@@ -154,10 +154,10 @@
 
   .pt { position: absolute; width: 0.72em; height: 0.72em; margin: -0.36em 0 0 -0.36em; border-radius: 50%; background: var(--grafito); border: 2px solid var(--optimo); opacity: 0; transform: scale(0.3); animation: rise 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
   .pt.real { border-color: var(--record); }
-  .end { position: absolute; width: 1.25em; height: 1.25em; margin: -0.625em 0 0 -0.625em; border-radius: 50%; opacity: 0; transform: scale(0.4); animation: rise 0.45s cubic-bezier(0.16, 1, 0.3, 1) 12.45s forwards; }
+  .end { position: absolute; width: 1.25em; height: 1.25em; margin: -0.625em 0 0 -0.625em; border-radius: 50%; opacity: 0; transform: scale(0.4); animation: rise 0.45s cubic-bezier(0.16, 1, 0.3, 1) 10.25s forwards; }
   .end.real { background: var(--record); }
   .end.opt { background: var(--optimo); }
-  .end::after { content: ""; position: absolute; inset: 0; border-radius: 50%; border: 2px solid currentColor; opacity: 0; animation: ping 0.9s ease-out 12.60s 1; }
+  .end::after { content: ""; position: absolute; inset: 0; border-radius: 50%; border: 2px solid currentColor; opacity: 0; animation: ping 0.9s ease-out 10.40s 1; }
   .end.real::after { color: var(--record); }
   .end.opt::after { color: var(--optimo); }
   @keyframes ping { 0% { transform: scale(1); opacity: 0.9; } 100% { transform: scale(3.4); opacity: 0; } }
@@ -173,8 +173,8 @@
   .tag.real { margin: -0.7em -1px 0 0; padding: 0 0.65em 1.7em 0; border-left: 0; border-right: 1px solid rgba(245, 243, 239, 0.26); transform: translate(-100%, -100%); animation-name: show; animation-timing-function: ease-out; color: var(--suave); }
   .tag.tall { padding-top: 2.7em; }
   .tag.real.tall { padding-top: 0; padding-bottom: 3.4em; }
-  .peak { position: absolute; transform: translate(0, -50%); margin: 0 0 0 1.5em; font-size: 0.95em; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap; opacity: 0; animation: show 0.5s ease-out 12.55s forwards; }
-  .more { position: absolute; margin: 0 0 0 1.5em; font-size: 0.9em; font-style: italic; color: var(--suave); white-space: nowrap; opacity: 0; animation: show 0.6s ease-out 13.10s forwards; }
+  .peak { position: absolute; transform: translate(0, -50%); margin: 0 0 0 1.5em; font-size: 0.95em; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap; opacity: 0; animation: show 0.5s ease-out 10.35s forwards; }
+  .more { position: absolute; margin: 0 0 0 1.5em; font-size: 0.9em; font-style: italic; color: var(--suave); white-space: nowrap; opacity: 0; animation: show 0.6s ease-out 10.90s forwards; }
   .peak.real { color: var(--record); }
   .peak.opt { color: var(--optimo); }
 
@@ -333,10 +333,10 @@
 
   /* Móvil: el dibujo va un pelín más rápido y todo lo que depende de él, con él. */
   @media (max-aspect-ratio: 1/1) {
-    .plot svg { animation-duration: 9.36s; }
-    .end { animation-delay: 9.81s; }
-    .end::after { animation-delay: 9.96s; }
-    .peak { animation-delay: 9.91s; }
+    .plot svg { animation-duration: 7.64s; }
+    .end { animation-delay: 8.09s; }
+    .end::after { animation-delay: 8.24s; }
+    .peak { animation-delay: 8.19s; }
     .list li { animation-delay: calc(0.5s + (var(--d) - 0.5s) * 0.78); }
   }
 
@@ -384,16 +384,16 @@
     <p class="sub">Domina tu evolución. <span>No solo lo que levantas. Lo que haces tuyo.</span></p>
     <ul class="list" aria-hidden="true">
       <li class="opt" data-k="" style="--d:0.70s">Dos máximos</li>
-      <li class="opt" data-k="1" style="--d:2.11s">Importa tu historial</li>
-      <li class="real" data-k="2" style="--d:3.16s">En dos toques</li>
-      <li class="opt" data-k="3" style="--d:4.21s">70 ejercicios + los tuyos</li>
-      <li class="real" data-k="4" style="--d:5.25s">Calculadora de discos</li>
-      <li class="opt" data-k="5" style="--d:6.29s">Sin anuncios</li>
-      <li class="real" data-k="6" style="--d:7.34s">Descanso</li>
-      <li class="opt" data-k="7" style="--d:8.37s">Sin cuenta</li>
-      <li class="real" data-k="8" style="--d:9.43s">Progreso</li>
-      <li class="opt" data-k="9" style="--d:10.47s">Sin conexión</li>
-      <li class="extra" data-k="" style="--d:12.70s">Y mucho más…</li>
+      <li class="opt" data-k="1" style="--d:2.00s">Importa tu historial</li>
+      <li class="real" data-k="2" style="--d:2.97s">En dos toques</li>
+      <li class="opt" data-k="3" style="--d:3.94s">70 ejercicios + los tuyos</li>
+      <li class="real" data-k="4" style="--d:4.90s">Calculadora de discos</li>
+      <li class="opt" data-k="5" style="--d:5.87s">Sin anuncios</li>
+      <li class="real" data-k="6" style="--d:6.84s">Descanso</li>
+      <li class="opt" data-k="7" style="--d:7.80s">Sin cuenta</li>
+      <li class="real" data-k="8" style="--d:8.78s">Progreso</li>
+      <li class="opt" data-k="9" style="--d:9.74s">Sin conexión</li>
+      <li class="extra" data-k="" style="--d:10.50s">Y mucho más…</li>
     </ul>
 
     <div class="deck" aria-hidden="true">
@@ -432,24 +432,24 @@
       <path class="line opt" d="M-10 615 L50.4 594.3 Q57 592 63.6 589.6 L83.4 582.4 Q90 580 96.9 581.3 L116.1 584.7 Q123 586 129.6 583.8 L164.4 572.2 Q171 570 177.2 573.3 L212.8 592.7 Q219 596 223.5 590.6 L257.5 550.4 Q262 545 269.0 545.5 L294.0 547.5 Q301 548 307.8 546.5 L340.2 539.5 Q347 538 351.9 543.0 L385.1 577.0 Q390 582 395.6 577.8 L427.4 554.2 Q433 550 438.6 554.2 L472.4 579.8 Q478 584 482.8 578.9 L519.2 540.1 Q524 535 530.2 538.3 L564.8 556.7 Q571 560 576.4 555.6 L608.6 529.4 Q614 525 619.8 528.8 L649.2 548.2 Q655 552 659.8 546.9 L695.2 510.1 Q700 505 706.3 508.0 L736.7 522.0 Q743 525 748.1 520.2 L780.9 489.8 Q786 485 792.2 488.2 L827.8 506.8 Q834 510 836.8 503.6 L859.2 451.4 Q862 445 863.3 438.1"/>
       <path class="line opt surge" d="M863.3 438.1 L886 320"/>
     </svg>
-    <span class="pt opt" data-k="1" style="left:12.290000000000001%; top:97.52%; animation-delay:2.06s"></span>
-    <span class="tag opt" style="left:12.290000000000001%; top:97.52%; animation-delay:2.10s">Importa tu historial</span>
-    <span class="pt opt" data-k="3" style="left:30.1%; top:91.25%; animation-delay:4.16s"></span>
-    <span class="tag opt tall" style="left:30.1%; top:91.25%; animation-delay:4.20s">70 ejercicios.<br>Los tuyos, sin límite.</span>
-    <span class="pt opt" data-k="5" style="left:47.78%; top:96.95%; animation-delay:6.24s"></span>
-    <span class="tag opt" style="left:47.78%; top:96.95%; animation-delay:6.28s">Sin anuncios</span>
-    <span class="pt opt" data-k="7" style="left:65.47%; top:91.63%; animation-delay:8.32s"></span>
-    <span class="tag opt tall" style="left:65.47%; top:91.63%; animation-delay:8.36s">Sin cuenta</span>
-    <span class="pt opt" data-k="9" style="left:83.31%; top:84.6%; animation-delay:10.42s"></span>
-    <span class="tag opt" style="left:83.31%; top:84.6%; animation-delay:10.46s">Funciona sin conexión</span>
-    <span class="pt real" data-k="2" style="left:21.2%; top:80.0%; animation-delay:3.11s"></span>
-    <span class="tag real" style="left:21.2%; top:80.0%; animation-delay:3.15s">Apunta una serie<br>en dos toques</span>
-    <span class="pt real" data-k="4" style="left:38.92%; top:67.15%; animation-delay:5.20s"></span>
-    <span class="tag real tall" style="left:38.92%; top:67.15%; animation-delay:5.24s">Calculadora de peso y discos</span>
-    <span class="pt real" data-k="6" style="left:56.73%; top:57.2%; animation-delay:7.29s"></span>
-    <span class="tag real" style="left:56.73%; top:57.2%; animation-delay:7.33s">Descanso automático</span>
-    <span class="pt real" data-k="8" style="left:74.46000000000001%; top:44.68%; animation-delay:9.38s"></span>
-    <span class="tag real tall" style="left:74.46000000000001%; top:44.68%; animation-delay:9.42s">Evolución de tu progreso</span>
+    <span class="pt opt" data-k="1" style="left:12.290000000000001%; top:97.52%; animation-delay:1.95s"></span>
+    <span class="tag opt" style="left:12.290000000000001%; top:97.52%; animation-delay:1.99s">Importa tu historial</span>
+    <span class="pt opt" data-k="3" style="left:30.1%; top:91.25%; animation-delay:3.89s"></span>
+    <span class="tag opt tall" style="left:30.1%; top:91.25%; animation-delay:3.93s">70 ejercicios.<br>Los tuyos, sin límite.</span>
+    <span class="pt opt" data-k="5" style="left:47.78%; top:96.95%; animation-delay:5.82s"></span>
+    <span class="tag opt" style="left:47.78%; top:96.95%; animation-delay:5.86s">Sin anuncios</span>
+    <span class="pt opt" data-k="7" style="left:65.47%; top:91.63%; animation-delay:7.75s"></span>
+    <span class="tag opt tall" style="left:65.47%; top:91.63%; animation-delay:7.79s">Sin cuenta</span>
+    <span class="pt opt" data-k="9" style="left:83.31%; top:84.6%; animation-delay:9.69s"></span>
+    <span class="tag opt" style="left:83.31%; top:84.6%; animation-delay:9.73s">Funciona sin conexión</span>
+    <span class="pt real" data-k="2" style="left:21.2%; top:80.0%; animation-delay:2.92s"></span>
+    <span class="tag real" style="left:21.2%; top:80.0%; animation-delay:2.96s">Apunta una serie<br>en dos toques</span>
+    <span class="pt real" data-k="4" style="left:38.92%; top:67.15%; animation-delay:4.85s"></span>
+    <span class="tag real tall" style="left:38.92%; top:67.15%; animation-delay:4.89s">Calculadora de peso y discos</span>
+    <span class="pt real" data-k="6" style="left:56.73%; top:57.2%; animation-delay:6.79s"></span>
+    <span class="tag real" style="left:56.73%; top:57.2%; animation-delay:6.83s">Descanso automático</span>
+    <span class="pt real" data-k="8" style="left:74.46000000000001%; top:44.68%; animation-delay:8.73s"></span>
+    <span class="tag real tall" style="left:74.46000000000001%; top:44.68%; animation-delay:8.77s">Evolución de tu progreso</span>
     <span class="end real" style="left:88.6%; top:18.67%"></span>
     <span class="end opt" style="left:88.6%; top:53.33%"></span>
     <span class="peak real" style="left:88.6%; top:18.67%">Máx. real</span>
@@ -606,7 +606,7 @@
     if (step % 2 === 0 && level >= 2) { at(5600 + 7400, softReset); at(5600 + 7400 + 2600, loop); } else { at(5600 + 7600, loop); }
   }
   // Empieza cuando termina la presentación de las curvas.
-  setTimeout(loop, (window.matchMedia && matchMedia('(max-aspect-ratio: 1/1)').matches ? 11860 : 14500));
+  setTimeout(loop, (window.matchMedia && matchMedia('(max-aspect-ratio: 1/1)').matches ? 10140 : 12300));
 })();
 </script>
 </body>
