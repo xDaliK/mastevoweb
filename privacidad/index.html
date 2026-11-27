@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MASTEVO · Política de privacidad</title>
+<meta name="description" content="Política de privacidad de MASTEVO: tus entrenamientos se quedan en tu móvil. Sin cuenta, sin anuncios y sin rastreo.">
+<meta name="theme-color" content="#0A0A0C">
+<link rel="canonical" href="https://mastevo.app/privacidad/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap">
+<style>
+  :root {
+    --grafito: #0A0A0C;
+    --tarjeta: #151519;
+    --hueso: #F5F3EF;
+    --suave: #B9B8BF;
+    --tenue: #8E8D95;
+    --record: #FF4433;
+    --optimo: #35D6BE;
+    --linea: rgba(245, 243, 239, 0.1);
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--grafito);
+    color: var(--hueso);
+    font-family: "Rubik", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    padding: max(20px, env(safe-area-inset-top)) max(18px, env(safe-area-inset-right)) max(40px, env(safe-area-inset-bottom)) max(18px, env(safe-area-inset-left));
+  }
+  .wrap { max-width: 720px; margin: 0 auto; }
+  header { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 28px; }
+  /* El logotipo dibujado, como en la portada: la M partida y el resto en blanco. */
+  .brand { display: inline-flex; text-decoration: none; }
+  .brand .wm { height: 18px; width: auto; display: block; }
+  .langs { display: flex; gap: 6px; flex-wrap: wrap; }
+  .langs button {
+    font: inherit; font-size: 13px; font-weight: 600; cursor: pointer;
+    color: var(--suave); background: transparent; border: 1px solid var(--linea);
+    border-radius: 999px; padding: 4px 11px;
+  }
+  .langs button[aria-pressed="true"] { color: var(--grafito); background: var(--hueso); border-color: var(--hueso); }
+  h1 { font-size: clamp(26px, 6vw, 36px); line-height: 1.15; margin: 0 0 6px; text-wrap: balance; }
+  .date { color: var(--tenue); font-size: 14px; margin: 0 0 24px; }
+  .lead { font-size: 18px; color: var(--hueso); margin: 0 0 28px; padding: 16px 18px; background: var(--tarjeta); border-radius: 14px; border-left: 3px solid var(--optimo); }
+  h2 { font-size: 18px; margin: 32px 0 8px; }
+  p, li { color: var(--suave); }
+  ul { padding-left: 20px; margin: 8px 0; }
+  li { margin: 4px 0; }
+  strong { color: var(--hueso); font-weight: 600; }
+  a { color: var(--optimo); }
+  footer { margin-top: 44px; padding-top: 18px; border-top: 1px solid var(--linea); color: var(--tenue); font-size: 14px; }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="brand" href="/" aria-label="MASTEVO"><svg class="wm" aria-hidden="true" viewBox="0 0 411 64" >
+      <defs><clipPath id="wmRightP" clipPathUnits="userSpaceOnUse"><rect x="30" y="-10" width="40" height="90"/></clipPath></defs>
+      <g fill="none" stroke="#F5F3EF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 60V22L30 48L56 4V60"/>
+        <path d="M4 60V22L30 48L56 4V60" stroke="#FF4433" clip-path="url(#wmRightP)"/>
+        <g transform="translate(70 0)"><path d="M4 60L26 4L48 60M13 42H39"/></g>
+        <g transform="translate(131 0)"><path d="M34 13C32 7 27 4 20 4C11 4 6 9 6 17C6 25 12 28 20 32C28 36 34 39 34 47C34 55 28 60 19 60C11 60 6 56 5 50"/></g>
+        <g transform="translate(179 0)"><path d="M4 4H44M24 4V60"/></g>
+        <g transform="translate(241 0)"><path d="M36 4H6V60H36M6 32H30"/></g>
+        <g transform="translate(291 0)"><path d="M4 4L27 60L50 4"/></g>
+        <g transform="translate(355 0)"><ellipse cx="28" cy="32" rx="24" ry="28"/></g>
+      </g>
+    </svg></a>
+    <nav class="langs" aria-label="Idioma / Language">
+      <button type="button" data-lang="es">Español</button>
+      <button type="button" data-lang="en">English</button>
+      <button type="button" data-lang="fr">Français</button>
+      <button type="button" data-lang="pt">Português</button>
+      <button type="button" data-lang="de">Deutsch</button>
+    </nav>
+  </header>
+
+  <!-- ESPAÑOL -->
+  <article lang="es" data-lang="es">
+    <h1>Política de privacidad de MASTEVO</h1>
+    <p class="date">Última actualización: 27 de noviembre de 2026</p>
+    <p class="lead">Tus entrenamientos se quedan en tu móvil. MASTEVO no tiene cuentas ni servidores propios, no muestra anuncios y no te rastrea.</p>
+
+    <h2>Responsable del tratamiento</h2>
+    <p>El responsable es <strong>MASTEVO</strong>, el desarrollador de esta aplicación para registrar entrenamientos de gimnasio.</p>
+    <p>Contacto: <a href="mailto:info@mastevo.app">info@mastevo.app</a>. Para ejercer tus derechos, pon «Protección de datos» en el asunto.</p>
+
+    <h2>Qué datos guarda la app y dónde</h2>
+    <p>Todo lo que apuntas se guarda <strong>solo en tu móvil</strong>, en la base de datos de la propia app: tus ejercicios, series, sesiones, rutinas, notas, peso corporal, fotos de ejercicios y ajustes. Nosotros no recibimos ni vemos esos datos: no salen de tu móvil salvo que tú hagas una copia y la compartas.</p>
+
+    <h2>Para qué se usan los datos y con qué base legal</h2>
+    <ul>
+      <li><strong>Tus entrenamientos:</strong> para que la app funcione en tu móvil (apuntar, calcular tus máximos y sugerencias, enseñar tu progreso). Como no salen de tu móvil, no los tratamos nosotros.</li>
+      <li><strong>Los correos e informes de fallos que nos envíes:</strong> para contestarte y arreglar el fallo. Base legal: nuestro interés legítimo en arreglar los fallos de la app y en atender tu consulta. Enviarlos es siempre decisión tuya.</li>
+      <li><strong>Las compras de MASTEVO Pro:</strong> para darte acceso a Pro. Base legal: la ejecución del contrato de compra y, en su caso, las obligaciones legales (fiscales).</li>
+    </ul>
+    <p>No tomamos decisiones automatizadas sobre ti ni hacemos perfiles.</p>
+
+    <h2>Lo que no hacemos</h2>
+    <ul>
+      <li>No pedimos registro ni cuenta.</li>
+      <li>No usamos herramientas de analítica, de publicidad ni de rastreo, ni cookies.</li>
+      <li>No vendemos ni compartimos tus datos con nadie.</li>
+      <li>No te enviamos publicidad ni información comercial.</li>
+    </ul>
+
+    <h2>Permisos que usa la app</h2>
+    <ul>
+      <li><strong>Cámara y fotos:</strong> solo si quieres poner una foto a un ejercicio. La foto se guarda dentro de la app y, si lo eliges, en tu galería.</li>
+      <li><strong>Notificaciones y alarmas exactas:</strong> para avisarte de que ha terminado el descanso, aunque tengas el móvil bloqueado.</li>
+      <li><strong>Archivos:</strong> solo los que tú eliges, mediante el selector del sistema, para guardar, restaurar o importar copias.</li>
+    </ul>
+
+    <h2>Copias de seguridad e importación</h2>
+    <p>Las copias (JSON o CSV) son archivos que creas tú y guardas o compartes donde decidas: una carpeta del móvil, tu correo, tu nube… Ese destino lo gestiona el servicio que elijas, no MASTEVO. Al importar desde otra app, el archivo se lee en tu móvil y no se envía a ningún sitio.</p>
+
+    <h2>Informes de fallos</h2>
+    <p>Si la app falla, puedes enviarnos un informe <strong>solo si tú lo decides</strong>, desde tu propia app de correo. Incluye datos técnicos del fallo (el error, la versión de la app, el modelo del móvil y su sistema), nunca tus entrenamientos. Lo usamos solo para arreglar el fallo.</p>
+
+    <h2>Compras (MASTEVO Pro)</h2>
+    <p>Las compras las procesa Google Play. Nosotros no recibimos tus datos de pago. Para comprobar si tienes Pro, la app usará un servicio de gestión de compras (RevenueCat), que recibe un identificador anónimo de la app y el estado de tu compra, nunca tu nombre ni tus entrenamientos.</p>
+
+    <h2>Destinatarios y transferencias internacionales</h2>
+    <p>No cedemos tus datos a nadie. Solo intervienen estos servicios, cada uno con su propia política:</p>
+    <ul>
+      <li><strong>Google</strong> (Google Play): descarga, compras y valoraciones de la app; y Gmail, donde recibimos los correos de info@mastevo.app.</li>
+      <li><strong>RevenueCat</strong>: comprobar el estado de tus compras de Pro.</li>
+      <li><strong>Cloudflare</strong>: aloja la web mastevo.app y reenvía los correos de info@mastevo.app.</li>
+    </ul>
+    <p>Algunos tienen servidores en Estados Unidos. Esas transferencias se hacen con las garantías que exige el RGPD: el Marco de Privacidad de Datos UE-EE. UU. o cláusulas contractuales tipo de la Comisión Europea.</p>
+
+    <h2>Cuánto tiempo se conservan</h2>
+    <ul>
+      <li><strong>Los datos de la app:</strong> en tu móvil, hasta que los borres o desinstales la app.</li>
+      <li><strong>Los correos e informes de fallos:</strong> el tiempo necesario para atenderte y arreglar el fallo, y como máximo dos años, salvo que nos pidas antes que los borremos.</li>
+      <li><strong>Las compras:</strong> el tiempo que exijan Google y la ley.</li>
+    </ul>
+
+    <h2>Tus derechos</h2>
+    <p>Puedes acceder a tus datos, rectificarlos, suprimirlos, pedir su portabilidad, oponerte a su tratamiento, pedir que se limite y retirar tu consentimiento en cualquier momento.</p>
+    <p>Como tus datos de entrenamiento están en tu móvil, la mayoría los ejerces tú directamente: los corriges o borras en la app, al desinstalarla se borran todos y la copia en JSON o CSV te los da en un formato abierto. Para lo que tengamos nosotros (tus correos), escribe a <a href="mailto:info@mastevo.app">info@mastevo.app</a> con «Protección de datos» en el asunto: te contestaremos en un mes como máximo.</p>
+    <p>También puedes reclamar ante la Agencia Española de Protección de Datos (<a href="https://www.aepd.es">www.aepd.es</a>).</p>
+
+    <h2>Seguridad</h2>
+    <p>Tus datos se guardan en el almacenamiento privado de la app, que Android protege de las demás apps. Las copias que exportas son archivos sin cifrar: guárdalas en un sitio seguro. Ninguna medida es infalible, pero no enviamos tus entrenamientos a ningún servidor.</p>
+
+    <h2>Menores</h2>
+    <p>MASTEVO no está dirigida a menores de 16 años. Si un menor nos ha escrito sin permiso de sus padres o tutores, borraremos su correo en cuanto lo sepamos.</p>
+
+    <h2>La web mastevo.app</h2>
+    <p>La web no usa cookies ni analítica. Cloudflare, que la aloja, registra datos técnicos de la conexión (como la dirección IP) para servirla y protegerla. La portada carga sus tipografías desde Google Fonts, así que tu navegador se conecta a Google y le envía tu dirección IP.</p>
+
+    <h2>Valoraciones</h2>
+    <p>Si la app te pide una valoración, se muestra con la ventana de Google Play. Lo que escribas ahí se rige por la política de privacidad de Google.</p>
+
+    <h2>Cambios</h2>
+    <p>Si esta política cambia, actualizaremos esta página y su fecha.</p>
+  </article>
+
+  <!-- ENGLISH -->
+  <article lang="en" data-lang="en" hidden>
+    <h1>MASTEVO Privacy Policy</h1>
+    <p class="date">Last updated: November 27, 2026</p>
+    <p class="lead">Your workouts stay on your phone. MASTEVO has no accounts or servers of its own, shows no ads and doesn't track you.</p>
+
+    <h2>Data controller</h2>
+    <p>The controller is <strong>MASTEVO</strong>, the developer of this app for logging gym workouts.</p>
+    <p>Contact: <a href="mailto:info@mastevo.app">info@mastevo.app</a>. To exercise your rights, put “Data protection” in the subject line.</p>
+
+    <h2>What data the app keeps, and where</h2>
+    <p>Everything you log is stored <strong>only on your phone</strong>, in the app's own database: your exercises, sets, sessions, routines, notes, bodyweight, exercise photos and settings. We don't receive or see this data: it never leaves your phone unless you make a backup and share it.</p>
+
+    <h2>Why data is used, and on what legal basis</h2>
+    <ul>
+      <li><strong>Your workouts:</strong> so the app works on your phone (logging, working out your maxes and suggestions, showing your progress). Since they never leave your phone, we don't process them.</li>
+      <li><strong>Emails and crash reports you send us:</strong> to reply and fix the problem. Legal basis: our legitimate interest in fixing the app's problems and answering you. Sending them is always your choice.</li>
+      <li><strong>MASTEVO Pro purchases:</strong> to give you access to Pro. Legal basis: performance of the purchase contract and, where applicable, legal (tax) obligations.</li>
+    </ul>
+    <p>We make no automated decisions about you and do no profiling.</p>
+
+    <h2>What we don't do</h2>
+    <ul>
+      <li>We don't ask you to sign up or create an account.</li>
+      <li>We don't use analytics, advertising or tracking tools, or cookies.</li>
+      <li>We don't sell or share your data with anyone.</li>
+      <li>We don't send you advertising or marketing.</li>
+    </ul>
+
+    <h2>Permissions the app uses</h2>
+    <ul>
+      <li><strong>Camera and photos:</strong> only if you want to add a photo to an exercise. The photo is kept inside the app and, if you choose, in your gallery.</li>
+      <li><strong>Notifications and exact alarms:</strong> to tell you when your rest is over, even with your phone locked.</li>
+      <li><strong>Files:</strong> only the ones you pick through the system file picker, to save, restore or import backups.</li>
+    </ul>
+
+    <h2>Backups and imports</h2>
+    <p>Backups (JSON or CSV) are files you create and save or share wherever you decide: a folder on your phone, your email, your cloud… That destination is handled by the service you choose, not by MASTEVO. When you import from another app, the file is read on your phone and sent nowhere.</p>
+
+    <h2>Crash reports</h2>
+    <p>If the app crashes, you can send us a report <strong>only if you decide to</strong>, from your own email app. It includes technical details of the crash (the error, the app version, your phone model and its system), never your workouts. We use it only to fix the problem.</p>
+
+    <h2>Purchases (MASTEVO Pro)</h2>
+    <p>Purchases are processed by Google Play. We don't receive your payment details. To check whether you have Pro, the app will use a purchase-management service (RevenueCat), which receives an anonymous app identifier and the status of your purchase, never your name or your workouts.</p>
+
+    <h2>Recipients and international transfers</h2>
+    <p>We don't give your data to anyone. Only these services are involved, each with its own policy:</p>
+    <ul>
+      <li><strong>Google</strong> (Google Play): downloading, buying and rating the app; and Gmail, where emails to info@mastevo.app arrive.</li>
+      <li><strong>RevenueCat</strong>: checking the status of your Pro purchases.</li>
+      <li><strong>Cloudflare</strong>: hosts the mastevo.app website and forwards emails to info@mastevo.app.</li>
+    </ul>
+    <p>Some have servers in the United States. Those transfers are made with the safeguards the GDPR requires: the EU-US Data Privacy Framework or the European Commission's standard contractual clauses.</p>
+
+    <h2>How long data is kept</h2>
+    <ul>
+      <li><strong>App data:</strong> on your phone, until you delete it or uninstall the app.</li>
+      <li><strong>Emails and crash reports:</strong> as long as needed to help you and fix the problem, and at most two years, unless you ask us to delete them sooner.</li>
+      <li><strong>Purchases:</strong> as long as Google and the law require.</li>
+    </ul>
+
+    <h2>Your rights</h2>
+    <p>You can access, correct and delete your data, ask for its portability, object to its processing, ask for it to be restricted and withdraw your consent at any time.</p>
+    <p>Since your workout data is on your phone, you exercise most of these yourself: you correct or delete it in the app, uninstalling deletes all of it, and the JSON or CSV backup gives it to you in an open format. For what we hold (your emails), write to <a href="mailto:info@mastevo.app">info@mastevo.app</a> with “Data protection” in the subject: we'll reply within one month at most.</p>
+    <p>You can also complain to your data protection authority; in Spain, the Agencia Española de Protección de Datos (<a href="https://www.aepd.es">www.aepd.es</a>).</p>
+
+    <h2>Security</h2>
+    <p>Your data is kept in the app's private storage, which Android protects from other apps. The backups you export are unencrypted files: keep them somewhere safe. No measure is foolproof, but we don't send your workouts to any server.</p>
+
+    <h2>Children</h2>
+    <p>MASTEVO is not directed at children under 16. If a child has written to us without their parents' or guardians' permission, we'll delete the email as soon as we know.</p>
+
+    <h2>The mastevo.app website</h2>
+    <p>The website uses no cookies or analytics. Cloudflare, which hosts it, logs technical connection data (such as your IP address) to serve and protect it. The home page loads its fonts from Google Fonts, so your browser connects to Google and sends it your IP address.</p>
+
+    <h2>Ratings</h2>
+    <p>If the app asks you for a rating, it uses the Google Play rating window. Whatever you write there is governed by Google's privacy policy.</p>
+
+    <h2>Changes</h2>
+    <p>If this policy changes, we'll update this page and its date.</p>
+  </article>
+
+  <!-- FRANÇAIS -->
+  <article lang="fr" data-lang="fr" hidden>
+    <h1>Politique de confidentialité de MASTEVO</h1>
+    <p class="date">Dernière mise à jour : 27 novembre 2026</p>
+    <p class="lead">Tes entraînements restent sur ton téléphone. MASTEVO n'a ni compte ni serveur, n'affiche pas de publicité et ne te suit pas.</p>
+
+    <h2>Responsable du traitement</h2>
+    <p>Le responsable est <strong>MASTEVO</strong>, le développeur de cette application pour noter tes entraînements en salle.</p>
+    <p>Contact : <a href="mailto:info@mastevo.app">info@mastevo.app</a>. Pour exercer tes droits, indique « Protection des données » dans l'objet.</p>
+
+    <h2>Quelles données l'app conserve, et où</h2>
+    <p>Tout ce que tu notes est enregistré <strong>uniquement sur ton téléphone</strong>, dans la base de données de l'app : tes exercices, séries, séances, programmes, notes, poids de corps, photos d'exercices et réglages. Nous ne recevons ni ne voyons ces données : elles ne quittent ton téléphone que si tu fais une sauvegarde et la partages.</p>
+
+    <h2>Finalités et base légale</h2>
+    <ul>
+      <li><strong>Tes entraînements :</strong> pour que l'app fonctionne sur ton téléphone (noter, calculer tes maximums et suggestions, montrer ta progression). Comme ils ne quittent pas ton téléphone, nous ne les traitons pas.</li>
+      <li><strong>Les e-mails et rapports de plantage que tu nous envoies :</strong> pour te répondre et corriger le problème. Base légale : notre intérêt légitime à corriger les problèmes de l'app et à te répondre. Les envoyer reste toujours ton choix.</li>
+      <li><strong>Les achats de MASTEVO Pro :</strong> pour te donner accès à Pro. Base légale : l'exécution du contrat d'achat et, le cas échéant, nos obligations légales (fiscales).</li>
+    </ul>
+    <p>Nous ne prenons aucune décision automatisée te concernant et ne faisons aucun profilage.</p>
+
+    <h2>Ce que nous ne faisons pas</h2>
+    <ul>
+      <li>Pas d'inscription ni de compte.</li>
+      <li>Aucun outil d'analyse, de publicité ou de suivi, ni cookies.</li>
+      <li>Nous ne vendons ni ne partageons tes données.</li>
+      <li>Nous ne t'envoyons ni publicité ni prospection.</li>
+    </ul>
+
+    <h2>Autorisations utilisées</h2>
+    <ul>
+      <li><strong>Appareil photo et photos :</strong> seulement si tu veux ajouter une photo à un exercice. Elle reste dans l'app et, si tu le choisis, dans ta galerie.</li>
+      <li><strong>Notifications et alarmes exactes :</strong> pour te prévenir de la fin du repos, même téléphone verrouillé.</li>
+      <li><strong>Fichiers :</strong> uniquement ceux que tu choisis via le sélecteur du système, pour enregistrer, restaurer ou importer des sauvegardes.</li>
+    </ul>
+
+    <h2>Sauvegardes et importation</h2>
+    <p>Les sauvegardes (JSON ou CSV) sont des fichiers que tu crées et enregistres ou partages où tu veux : un dossier du téléphone, ton e-mail, ton cloud… Cette destination dépend du service choisi, pas de MASTEVO. Quand tu importes depuis une autre app, le fichier est lu sur ton téléphone et n'est envoyé nulle part.</p>
+
+    <h2>Rapports de plantage</h2>
+    <p>Si l'app plante, tu peux nous envoyer un rapport <strong>seulement si tu le décides</strong>, depuis ta propre app d'e-mail. Il contient des données techniques (l'erreur, la version de l'app, le modèle du téléphone et son système), jamais tes entraînements. Nous l'utilisons uniquement pour corriger le problème.</p>
+
+    <h2>Achats (MASTEVO Pro)</h2>
+    <p>Les achats sont traités par Google Play. Nous ne recevons pas tes données de paiement. Pour vérifier si tu as Pro, l'app utilisera un service de gestion des achats (RevenueCat), qui reçoit un identifiant anonyme de l'app et l'état de ton achat, jamais ton nom ni tes entraînements.</p>
+
+    <h2>Destinataires et transferts internationaux</h2>
+    <p>Nous ne cédons tes données à personne. Seuls ces services interviennent, chacun avec sa propre politique :</p>
+    <ul>
+      <li><strong>Google</strong> (Google Play) : téléchargement, achats et avis sur l'app ; et Gmail, où arrivent les e-mails envoyés à info@mastevo.app.</li>
+      <li><strong>RevenueCat</strong> : vérifier l'état de tes achats Pro.</li>
+      <li><strong>Cloudflare</strong> : héberge le site mastevo.app et transfère les e-mails envoyés à info@mastevo.app.</li>
+    </ul>
+    <p>Certains ont des serveurs aux États-Unis. Ces transferts se font avec les garanties exigées par le RGPD : le cadre de protection des données UE-États-Unis ou les clauses contractuelles types de la Commission européenne.</p>
+
+    <h2>Durée de conservation</h2>
+    <ul>
+      <li><strong>Les données de l'app :</strong> sur ton téléphone, jusqu'à ce que tu les supprimes ou désinstalles l'app.</li>
+      <li><strong>Les e-mails et rapports de plantage :</strong> le temps nécessaire pour te répondre et corriger le problème, et deux ans au plus, sauf si tu nous demandes de les supprimer avant.</li>
+      <li><strong>Les achats :</strong> le temps exigé par Google et par la loi.</li>
+    </ul>
+
+    <h2>Tes droits</h2>
+    <p>Tu peux accéder à tes données, les rectifier, les supprimer, demander leur portabilité, t'opposer à leur traitement, demander sa limitation et retirer ton consentement à tout moment.</p>
+    <p>Comme tes données d'entraînement sont sur ton téléphone, tu exerces toi-même la plupart de ces droits : tu les corriges ou supprimes dans l'app, la désinstallation efface tout et la sauvegarde JSON ou CSV te les donne dans un format ouvert. Pour ce que nous détenons (tes e-mails), écris à <a href="mailto:info@mastevo.app">info@mastevo.app</a> avec « Protection des données » dans l'objet : nous te répondrons sous un mois au plus.</p>
+    <p>Tu peux aussi déposer une réclamation auprès de ton autorité de protection des données (en France, la CNIL : <a href="https://www.cnil.fr">www.cnil.fr</a>).</p>
+
+    <h2>Sécurité</h2>
+    <p>Tes données sont conservées dans le stockage privé de l'app, qu'Android protège des autres apps. Les sauvegardes que tu exportes sont des fichiers non chiffrés : garde-les en lieu sûr. Aucune mesure n'est infaillible, mais nous n'envoyons tes entraînements à aucun serveur.</p>
+
+    <h2>Mineurs</h2>
+    <p>MASTEVO ne s'adresse pas aux moins de 16 ans. Si un mineur nous a écrit sans l'accord de ses parents ou tuteurs, nous supprimerons son e-mail dès que nous le saurons.</p>
+
+    <h2>Le site mastevo.app</h2>
+    <p>Le site n'utilise ni cookies ni outils d'analyse. Cloudflare, qui l'héberge, enregistre des données techniques de connexion (comme l'adresse IP) pour le servir et le protéger. La page d'accueil charge ses polices depuis Google Fonts : ton navigateur se connecte donc à Google et lui envoie ton adresse IP.</p>
+
+    <h2>Avis</h2>
+    <p>Si l'app te demande un avis, elle utilise la fenêtre de Google Play. Ce que tu y écris relève de la politique de confidentialité de Google.</p>
+
+    <h2>Modifications</h2>
+    <p>Si cette politique change, nous mettrons à jour cette page et sa date.</p>
+  </article>
+
+  <!-- PORTUGUÊS -->
+  <article lang="pt" data-lang="pt" hidden>
+    <h1>Política de privacidade do MASTEVO</h1>
+    <p class="date">Última atualização: 27 de novembro de 2026</p>
+    <p class="lead">Os teus treinos ficam no teu telemóvel. O MASTEVO não tem contas nem servidores próprios, não mostra anúncios e não te segue.</p>
+
+    <h2>Responsável pelo tratamento</h2>
+    <p>O responsável é o <strong>MASTEVO</strong>, o programador desta aplicação para registar treinos de ginásio.</p>
+    <p>Contacto: <a href="mailto:info@mastevo.app">info@mastevo.app</a>. Para exerceres os teus direitos, escreve «Proteção de dados» no assunto.</p>
+
+    <h2>Que dados a app guarda e onde</h2>
+    <p>Tudo o que registas fica guardado <strong>só no teu telemóvel</strong>, na base de dados da própria app: os teus exercícios, séries, sessões, rotinas, notas, peso corporal, fotos de exercícios e definições. Nós não recebemos nem vemos esses dados: não saem do teu telemóvel, a não ser que faças uma cópia e a partilhes.</p>
+
+    <h2>Para que se usam os dados e com que fundamento legal</h2>
+    <ul>
+      <li><strong>Os teus treinos:</strong> para a app funcionar no teu telemóvel (registar, calcular os teus máximos e sugestões, mostrar o teu progresso). Como não saem do teu telemóvel, não os tratamos.</li>
+      <li><strong>Os e-mails e relatórios de falhas que nos envies:</strong> para te responder e corrigir a falha. Fundamento: o nosso interesse legítimo em corrigir as falhas da app e em responder-te. Enviá-los é sempre decisão tua.</li>
+      <li><strong>As compras do MASTEVO Pro:</strong> para te dar acesso ao Pro. Fundamento: a execução do contrato de compra e, se for o caso, obrigações legais (fiscais).</li>
+    </ul>
+    <p>Não tomamos decisões automatizadas sobre ti nem fazemos perfis.</p>
+
+    <h2>O que não fazemos</h2>
+    <ul>
+      <li>Não pedimos registo nem conta.</li>
+      <li>Não usamos ferramentas de análise, publicidade ou rastreio, nem cookies.</li>
+      <li>Não vendemos nem partilhamos os teus dados com ninguém.</li>
+      <li>Não te enviamos publicidade nem comunicações comerciais.</li>
+    </ul>
+
+    <h2>Permissões que a app usa</h2>
+    <ul>
+      <li><strong>Câmara e fotos:</strong> só se quiseres pôr uma foto num exercício. A foto fica dentro da app e, se escolheres, na tua galeria.</li>
+      <li><strong>Notificações e alarmes exatos:</strong> para te avisar de que o descanso terminou, mesmo com o telemóvel bloqueado.</li>
+      <li><strong>Ficheiros:</strong> só os que escolhes, através do seletor do sistema, para guardar, restaurar ou importar cópias.</li>
+    </ul>
+
+    <h2>Cópias de segurança e importação</h2>
+    <p>As cópias (JSON ou CSV) são ficheiros que crias e guardas ou partilhas onde quiseres: uma pasta do telemóvel, o teu e-mail, a tua nuvem… Esse destino é gerido pelo serviço que escolheres, não pelo MASTEVO. Ao importar de outra app, o ficheiro é lido no teu telemóvel e não é enviado para lado nenhum.</p>
+
+    <h2>Relatórios de falhas</h2>
+    <p>Se a app falhar, podes enviar-nos um relatório <strong>só se decidires</strong>, a partir da tua própria app de e-mail. Inclui dados técnicos da falha (o erro, a versão da app, o modelo do telemóvel e o sistema), nunca os teus treinos. Usamo-lo só para corrigir a falha.</p>
+
+    <h2>Compras (MASTEVO Pro)</h2>
+    <p>As compras são processadas pelo Google Play. Nós não recebemos os teus dados de pagamento. Para verificar se tens Pro, a app vai usar um serviço de gestão de compras (RevenueCat), que recebe um identificador anónimo da app e o estado da tua compra, nunca o teu nome nem os teus treinos.</p>
+
+    <h2>Destinatários e transferências internacionais</h2>
+    <p>Não cedemos os teus dados a ninguém. Só intervêm estes serviços, cada um com a sua própria política:</p>
+    <ul>
+      <li><strong>Google</strong> (Google Play): transferência, compras e avaliações da app; e o Gmail, onde chegam os e-mails para info@mastevo.app.</li>
+      <li><strong>RevenueCat</strong>: verificar o estado das tuas compras do Pro.</li>
+      <li><strong>Cloudflare</strong>: aloja o site mastevo.app e reencaminha os e-mails para info@mastevo.app.</li>
+    </ul>
+    <p>Alguns têm servidores nos Estados Unidos. Essas transferências fazem-se com as garantias que o RGPD exige: o Quadro de Privacidade de Dados UE-EUA ou as cláusulas contratuais-tipo da Comissão Europeia.</p>
+
+    <h2>Durante quanto tempo se conservam</h2>
+    <ul>
+      <li><strong>Os dados da app:</strong> no teu telemóvel, até os apagares ou desinstalares a app.</li>
+      <li><strong>Os e-mails e relatórios de falhas:</strong> o tempo necessário para te responder e corrigir a falha, e no máximo dois anos, a não ser que nos peças antes que os apaguemos.</li>
+      <li><strong>As compras:</strong> o tempo que o Google e a lei exigirem.</li>
+    </ul>
+
+    <h2>Os teus direitos</h2>
+    <p>Podes aceder aos teus dados, retificá-los, apagá-los, pedir a sua portabilidade, opor-te ao seu tratamento, pedir que seja limitado e retirar o teu consentimento a qualquer momento.</p>
+    <p>Como os teus dados de treino estão no teu telemóvel, exerces tu mesmo a maioria destes direitos: corriges ou apagas na app, ao desinstalá-la apaga-se tudo e a cópia em JSON ou CSV dá-tos num formato aberto. Para o que nós tenhamos (os teus e-mails), escreve para <a href="mailto:info@mastevo.app">info@mastevo.app</a> com «Proteção de dados» no assunto: respondemos no prazo máximo de um mês.</p>
+    <p>Também podes apresentar reclamação à autoridade de proteção de dados (em Portugal, a CNPD: <a href="https://www.cnpd.pt">www.cnpd.pt</a>).</p>
+
+    <h2>Segurança</h2>
+    <p>Os teus dados ficam no armazenamento privado da app, que o Android protege das outras apps. As cópias que exportas são ficheiros sem cifra: guarda-as num sítio seguro. Nenhuma medida é infalível, mas não enviamos os teus treinos para nenhum servidor.</p>
+
+    <h2>Menores</h2>
+    <p>O MASTEVO não se destina a menores de 16 anos. Se um menor nos tiver escrito sem autorização dos pais ou tutores, apagaremos o e-mail assim que soubermos.</p>
+
+    <h2>O site mastevo.app</h2>
+    <p>O site não usa cookies nem ferramentas de análise. A Cloudflare, que o aloja, regista dados técnicos da ligação (como o endereço IP) para o servir e proteger. A página inicial carrega os tipos de letra do Google Fonts, por isso o teu navegador liga-se à Google e envia-lhe o teu endereço IP.</p>
+
+    <h2>Avaliações</h2>
+    <p>Se a app te pedir uma avaliação, usa a janela do Google Play. O que lá escreveres rege-se pela política de privacidade da Google.</p>
+
+    <h2>Alterações</h2>
+    <p>Se esta política mudar, atualizaremos esta página e a sua data.</p>
+  </article>
+
+  <!-- DEUTSCH -->
+  <article lang="de" data-lang="de" hidden>
+    <h1>Datenschutzerklärung von MASTEVO</h1>
+    <p class="date">Zuletzt aktualisiert: 27. November 2026</p>
+    <p class="lead">Deine Trainings bleiben auf deinem Handy. MASTEVO hat weder Konten noch eigene Server, zeigt keine Werbung und verfolgt dich nicht.</p>
+
+    <h2>Verantwortlicher</h2>
+    <p>Verantwortlich ist <strong>MASTEVO</strong>, der Entwickler dieser App zum Notieren von Trainings im Fitnessstudio.</p>
+    <p>Kontakt: <a href="mailto:info@mastevo.app">info@mastevo.app</a>. Um deine Rechte auszuüben, schreib „Datenschutz“ in den Betreff.</p>
+
+    <h2>Welche Daten die App speichert, und wo</h2>
+    <p>Alles, was du einträgst, wird <strong>nur auf deinem Handy</strong> gespeichert, in der Datenbank der App: deine Übungen, Sätze, Einheiten, Pläne, Notizen, dein Körpergewicht, Übungsfotos und Einstellungen. Wir erhalten und sehen diese Daten nicht: Sie verlassen dein Handy nur, wenn du eine Sicherung erstellst und teilst.</p>
+
+    <h2>Zwecke und Rechtsgrundlage</h2>
+    <ul>
+      <li><strong>Deine Trainings:</strong> damit die App auf deinem Handy funktioniert (eintragen, deine Maximalwerte und Vorschläge berechnen, deinen Fortschritt zeigen). Da sie dein Handy nicht verlassen, verarbeiten wir sie nicht.</li>
+      <li><strong>E-Mails und Absturzberichte, die du uns schickst:</strong> um dir zu antworten und den Fehler zu beheben. Rechtsgrundlage: unser berechtigtes Interesse, Fehler der App zu beheben und dir zu antworten. Ob du sie schickst, entscheidest immer du.</li>
+      <li><strong>Käufe von MASTEVO Pro:</strong> um dir Zugang zu Pro zu geben. Rechtsgrundlage: die Erfüllung des Kaufvertrags und gegebenenfalls gesetzliche (steuerliche) Pflichten.</li>
+    </ul>
+    <p>Wir treffen keine automatisierten Entscheidungen über dich und erstellen keine Profile.</p>
+
+    <h2>Was wir nicht tun</h2>
+    <ul>
+      <li>Keine Registrierung, kein Konto.</li>
+      <li>Keine Analyse-, Werbe- oder Tracking-Tools und keine Cookies.</li>
+      <li>Wir verkaufen und teilen deine Daten mit niemandem.</li>
+      <li>Wir schicken dir keine Werbung.</li>
+    </ul>
+
+    <h2>Berechtigungen der App</h2>
+    <ul>
+      <li><strong>Kamera und Fotos:</strong> nur, wenn du einer Übung ein Foto geben willst. Das Foto bleibt in der App und, wenn du willst, in deiner Galerie.</li>
+      <li><strong>Benachrichtigungen und exakte Wecker:</strong> um dich zu erinnern, dass die Pause vorbei ist, auch bei gesperrtem Handy.</li>
+      <li><strong>Dateien:</strong> nur die, die du über die Dateiauswahl des Systems wählst, um Sicherungen zu speichern, wiederherzustellen oder zu importieren.</li>
+    </ul>
+
+    <h2>Sicherungen und Import</h2>
+    <p>Sicherungen (JSON oder CSV) sind Dateien, die du erstellst und speicherst oder teilst, wo du willst: ein Ordner auf dem Handy, deine E-Mail, deine Cloud … Um dieses Ziel kümmert sich der Dienst, den du wählst, nicht MASTEVO. Beim Import aus einer anderen App wird die Datei auf deinem Handy gelesen und nirgendwohin gesendet.</p>
+
+    <h2>Absturzberichte</h2>
+    <p>Stürzt die App ab, kannst du uns einen Bericht schicken, <strong>aber nur, wenn du das willst</strong>, über deine eigene E-Mail-App. Er enthält technische Daten (den Fehler, die App-Version, das Handymodell und sein System), nie deine Trainings. Wir nutzen ihn nur, um den Fehler zu beheben.</p>
+
+    <h2>Käufe (MASTEVO Pro)</h2>
+    <p>Käufe wickelt Google Play ab. Wir erhalten deine Zahlungsdaten nicht. Um zu prüfen, ob du Pro hast, wird die App einen Dienst zur Kaufverwaltung (RevenueCat) nutzen, der eine anonyme App-Kennung und den Status deines Kaufs erhält, nie deinen Namen oder deine Trainings.</p>
+
+    <h2>Empfänger und Übermittlungen in Drittländer</h2>
+    <p>Wir geben deine Daten an niemanden weiter. Beteiligt sind nur diese Dienste, jeder mit eigener Datenschutzerklärung:</p>
+    <ul>
+      <li><strong>Google</strong> (Google Play): Download, Käufe und Bewertungen der App; und Gmail, wo E-Mails an info@mastevo.app ankommen.</li>
+      <li><strong>RevenueCat</strong>: den Status deiner Pro-Käufe prüfen.</li>
+      <li><strong>Cloudflare</strong>: hostet die Website mastevo.app und leitet E-Mails an info@mastevo.app weiter.</li>
+    </ul>
+    <p>Einige haben Server in den USA. Diese Übermittlungen erfolgen mit den Garantien, die die DSGVO verlangt: dem EU-US Data Privacy Framework oder den Standardvertragsklauseln der Europäischen Kommission.</p>
+
+    <h2>Speicherdauer</h2>
+    <ul>
+      <li><strong>Daten der App:</strong> auf deinem Handy, bis du sie löschst oder die App deinstallierst.</li>
+      <li><strong>E-Mails und Absturzberichte:</strong> so lange wie nötig, um dir zu helfen und den Fehler zu beheben, höchstens zwei Jahre, außer du bittest uns früher um Löschung.</li>
+      <li><strong>Käufe:</strong> so lange, wie Google und das Gesetz es verlangen.</li>
+    </ul>
+
+    <h2>Deine Rechte</h2>
+    <p>Du kannst auf deine Daten zugreifen, sie berichtigen und löschen lassen, ihre Übertragbarkeit verlangen, der Verarbeitung widersprechen, ihre Einschränkung verlangen und deine Einwilligung jederzeit widerrufen.</p>
+    <p>Da deine Trainingsdaten auf deinem Handy liegen, übst du die meisten Rechte selbst aus: Du korrigierst oder löschst sie in der App, beim Deinstallieren wird alles gelöscht, und die Sicherung als JSON oder CSV gibt sie dir in einem offenen Format. Für das, was wir haben (deine E-Mails), schreib an <a href="mailto:info@mastevo.app">info@mastevo.app</a> mit „Datenschutz“ im Betreff: Wir antworten innerhalb eines Monats.</p>
+    <p>Du kannst dich auch bei einer Datenschutzbehörde beschweren, zum Beispiel bei der deines Bundeslandes.</p>
+
+    <h2>Sicherheit</h2>
+    <p>Deine Daten liegen im privaten Speicher der App, den Android vor anderen Apps schützt. Die Sicherungen, die du exportierst, sind unverschlüsselte Dateien: Bewahre sie sicher auf. Keine Maßnahme ist perfekt, aber wir senden deine Trainings an keinen Server.</p>
+
+    <h2>Kinder</h2>
+    <p>MASTEVO richtet sich nicht an Kinder unter 16 Jahren. Hat uns ein Kind ohne Erlaubnis seiner Eltern oder Erziehungsberechtigten geschrieben, löschen wir die E-Mail, sobald wir davon erfahren.</p>
+
+    <h2>Die Website mastevo.app</h2>
+    <p>Die Website nutzt keine Cookies und keine Analyse. Cloudflare, das sie hostet, speichert technische Verbindungsdaten (etwa die IP-Adresse), um sie auszuliefern und zu schützen. Die Startseite lädt ihre Schriften von Google Fonts, dein Browser verbindet sich also mit Google und übermittelt deine IP-Adresse.</p>
+
+    <h2>Bewertungen</h2>
+    <p>Bittet dich die App um eine Bewertung, nutzt sie das Fenster von Google Play. Was du dort schreibst, unterliegt der Datenschutzerklärung von Google.</p>
+
+    <h2>Änderungen</h2>
+    <p>Ändert sich diese Erklärung, aktualisieren wir diese Seite und ihr Datum.</p>
+  </article>
+
+  <footer>MASTEVO · <a href="/">mastevo.app</a> · <a href="mailto:info@mastevo.app">info@mastevo.app</a><br><span id="rights">© 2026 MASTEVO. Todos los derechos reservados.</span></footer>
+</div>
+<script>
+  (function () {
+    var langs = ["es", "en", "fr", "pt", "de"];
+    var rights = { es: "Todos los derechos reservados.", en: "All rights reserved.", fr: "Tous droits réservés.", pt: "Todos os direitos reservados.", de: "Alle Rechte vorbehalten." };
+    var titles = { es: "Política de privacidad", en: "Privacy Policy", fr: "Politique de confidentialité", pt: "Política de privacidade", de: "Datenschutzerklärung" };
+    function pick() {
+      var hash = (location.hash || "").replace("#", "");
+      if (langs.indexOf(hash) >= 0) return hash;
+      var nav = ((navigator.languages && navigator.languages[0]) || navigator.language || "es").slice(0, 2).toLowerCase();
+      return langs.indexOf(nav) >= 0 ? nav : "en";
+    }
+    function show(lang) {
+      document.querySelectorAll("article[data-lang]").forEach(function (a) { a.hidden = a.getAttribute("data-lang") !== lang; });
+      document.querySelectorAll(".langs button").forEach(function (b) { b.setAttribute("aria-pressed", String(b.getAttribute("data-lang") === lang)); });
+      document.documentElement.lang = lang;
+      document.title = "MASTEVO · " + titles[lang];
+      document.getElementById("rights").textContent = "© 2026 MASTEVO. " + rights[lang];
+    }
+    document.querySelectorAll(".langs button").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var lang = b.getAttribute("data-lang");
+        history.replaceState(null, "", "#" + lang);
+        show(lang);
+      });
+    });
+    window.addEventListener("hashchange", function () { show(pick()); });
+    show(pick());
+  })();
+</script>
+</body>
+</html>
