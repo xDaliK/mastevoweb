@@ -61,7 +61,7 @@
 <body>
 <div class="wrap">
   <header>
-    <a class="brand" href="/" aria-label="MASTEVO"><svg class="wm" aria-hidden="true" viewBox="0 0 411 64" >
+    <a class="brand" href="/es/" aria-label="MASTEVO"><svg class="wm" aria-hidden="true" viewBox="0 0 411 64" >
       <defs><clipPath id="wmRightP" clipPathUnits="userSpaceOnUse"><rect x="30" y="-10" width="40" height="90"/></clipPath></defs>
       <g fill="none" stroke="#F5F3EF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
         <path d="M4 60V22L30 48L56 4V60"/>
@@ -493,18 +493,18 @@
     <p>Ändert sich diese Erklärung, aktualisieren wir diese Seite und ihr Datum.</p>
   </article>
 
-  <footer>MASTEVO · <a href="/">mastevo.app</a> · <a href="mailto:info@mastevo.app">info@mastevo.app</a><br><span id="rights">© 2026 MASTEVO. Todos los derechos reservados.</span></footer>
+  <footer>MASTEVO · <a href="/es/">mastevo.app</a> · <a href="mailto:info@mastevo.app">info@mastevo.app</a><br><span id="rights">© 2026 MASTEVO. Todos los derechos reservados.</span></footer>
 </div>
 <script>
   (function () {
+    // /privacy/ abre en inglés y /privacidad/ en español; #en, #fr... o los botones lo cambian.
+    var DEFAULT_LANG = "es";
     var langs = ["es", "en", "fr", "pt", "de"];
     var rights = { es: "Todos los derechos reservados.", en: "All rights reserved.", fr: "Tous droits réservés.", pt: "Todos os direitos reservados.", de: "Alle Rechte vorbehalten." };
     var titles = { es: "Política de privacidad", en: "Privacy Policy", fr: "Politique de confidentialité", pt: "Política de privacidade", de: "Datenschutzerklärung" };
     function pick() {
       var hash = (location.hash || "").replace("#", "");
-      if (langs.indexOf(hash) >= 0) return hash;
-      var nav = ((navigator.languages && navigator.languages[0]) || navigator.language || "es").slice(0, 2).toLowerCase();
-      return langs.indexOf(nav) >= 0 ? nav : "en";
+      return langs.indexOf(hash) >= 0 ? hash : DEFAULT_LANG;
     }
     function show(lang) {
       document.querySelectorAll("article[data-lang]").forEach(function (a) { a.hidden = a.getAttribute("data-lang") !== lang; });
